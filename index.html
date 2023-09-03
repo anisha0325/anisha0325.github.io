@@ -22,16 +22,15 @@
             color: #fff;
             text-align: center;
             padding: 20px;
+            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            height: 100vh; /* Set left pane height to fill the page */
         }
         #left-pane img {
             border-radius: 50%;
             max-width: 100%; /* Ensure the image fits within its container */
             height: auto; /* Maintain aspect ratio */
-            width: 80%; /* Increase the size of your photo */
         }
         h1 {
             font-size: 24px; /* Reduced font size for the name */
@@ -39,7 +38,6 @@
         }
         .tabs {
             text-align: left;
-            flex-grow: 1; /* Allow the tabs to grow and fill the remaining space */
         }
         .tab {
             background-color: #222;
@@ -53,7 +51,6 @@
             transition: background-color 0.3s;
             padding: 15px 20px; /* Increased padding for tab text */
             font-size: 18px; /* Increased font size for tab text */
-            cursor: pointer; /* Add cursor pointer for interaction */
         }
         .tab:hover {
             background-color: #444;
@@ -78,11 +75,18 @@
             opacity: 1;
         }
     </style>
+    <script>
+        // JavaScript to add transition to the "About Me" heading
+        document.addEventListener("DOMContentLoaded", function () {
+            const aboutMe = document.querySelector(".about-me");
+            aboutMe.classList.add("show");
+        });
+    </script>
 </head>
 <body>
     <div id="left-pane">
         <div>
-            <img src="your-photo.jpg" alt="Your Photo">
+            <img src="your-photo.jpg" alt="Your Photo" width="150">
             <h1>Your Name</h1>
             <div class="contact-icons">
                 <a href="mailto:your@email.com"><img src="email-icon.png" alt="Email" width="30"></a>
@@ -96,10 +100,14 @@
             <a class="tab" href="projects.html">Projects</a>
             <a class="tab" href="research.html">Research Work</a>
             <a class="tab" href="publications.html">Publications</a>
+            <a class="tab" href="achievements.html">Achievements</a>
         </div>
     </div>
     <div class="content">
-        <!-- Content will be loaded dynamically based on the clicked tab -->
+        <div class="about-me">
+            <h2>About Me</h2>
+            <p>Welcome to my personal website. Here, you can learn more about me and my interests.</p>
+        </div>
     </div>
 </body>
 </html>
