@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('background-image-desk.jpg'); /* Replace with your background image */
+            background-image: url('background-image.jpg'); /* Replace with your background image */
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -22,20 +22,22 @@
             color: #fff;
             text-align: center;
             padding: 20px;
-            height: 200%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         #left-pane img {
-            border-radius: 80%;
+            border-radius: 50%;
             max-width: 100%; /* Ensure the image fits within its container */
             height: auto; /* Maintain aspect ratio */
         }
         h1 {
-            font-size: 24px;
+            font-size: 24px; /* Reduced font size for the name */
             margin: 0;
         }
         .tabs {
             text-align: left;
-            margin-top: 30px;
         }
         .tab {
             background-color: #222;
@@ -49,6 +51,7 @@
             transition: background-color 0.3s;
             padding: 15px 20px; /* Increased padding for tab text */
             font-size: 18px; /* Increased font size for tab text */
+            cursor: pointer; /* Add cursor pointer for interaction */
         }
         .tab:hover {
             background-color: #444;
@@ -72,15 +75,37 @@
         .about-me.show {
             opacity: 1;
         }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            color: #fff;
+            border-radius: 5px;
+            z-index: 1;
+        }
+        .modal-content {
+            text-align: center;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #fff;
+            cursor: pointer;
+        }
     </style>
     <script>
-        // JavaScript to add transition to the "About Me" heading
+        // JavaScript to handle modal opening and closing
         document.addEventListener("DOMContentLoaded", function () {
-            const aboutMe = document.querySelector(".about-me");
             const tabs = document.querySelectorAll(".tab");
             const modals = document.querySelectorAll(".modal");
             const closeButton = document.querySelectorAll(".close");
-            aboutMe.classList.add("show");
 
             tabs.forEach((tab, index) => {
                 tab.addEventListener("click", () => {
@@ -98,21 +123,45 @@
 </head>
 <body>
     <div id="left-pane">
-        <img src="your-photo.jpg" alt="Your Photo" width="150">
-        <h1>Anisha Saha</h1>
-        <div class="contact-icons">
-            <a href="mailto:your@email.com"><img src="email-icon.png" alt="Email" width="30"></a>
-            <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank"><img src="linkedin-icon.png" alt="LinkedIn" width="30"></a>
-            <a href="https://github.com/your-github-profile" target="_blank"><img src="github-icon.png" alt="GitHub" width="30"></a>
+        <div>
+            <img src="your-photo.jpg" alt="Your Photo" width="150">
+            <h1>Your Name</h1>
+            <div class="contact-icons">
+                <a href="mailto:your@email.com"><img src="email-icon.png" alt="Email" width="30"></a>
+                <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank"><img src="linkedin-icon.png" alt="LinkedIn" width="30"></a>
+                <a href="https://github.com/your-github-profile" target="_blank"><img src="github-icon.png" alt="GitHub" width="30"></a>
+            </div>
         </div>
         <div class="tabs">
-            <a class="tab" href="education.html">Education</a>
-            <a class="tab" href="experiences.html">Experiences</a>
-            <a class="tab" href="projects.html">Projects</a>
-            <a class="tab" href="research.html">Research Work</a>
-            <a class="tab" href="publications.html">Publications</a>
+            <div class="tab">Education</div>
+            <div class="tab">Experiences</div>
+            <div class="tab">Projects</div>
+            <div class="tab">Research Work</div>
+            <div class="tab">Publications</div>
+            <div class="tab">Achievements</div>
         </div>
     </div>
+
+    <!-- Modal for Education -->
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close">X</span>
+            <h2>Education</h2>
+            <p>Content for the Education tab goes here.</p>
+        </div>
+    </div>
+
+    <!-- Modal for Experiences -->
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close">X</span>
+            <h2>Experiences</h2>
+            <p>Content for the Experiences tab goes here.</p>
+        </div>
+    </div>
+
+    <!-- Add similar modal sections for other tabs -->
+
     <div class="content">
         <div class="about-me">
             <h2>About Me</h2>
