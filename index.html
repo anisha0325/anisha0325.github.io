@@ -51,7 +51,6 @@
             transition: background-color 0.3s;
             padding: 15px 20px; /* Increased padding for tab text */
             font-size: 18px; /* Increased font size for tab text */
-            cursor: pointer; /* Add cursor pointer for interaction */
         }
         .tab:hover {
             background-color: #444;
@@ -75,49 +74,12 @@
         .about-me.show {
             opacity: 1;
         }
-
-        /* Modal styles */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            color: #fff;
-            border-radius: 5px;
-            z-index: 1;
-        }
-        .modal-content {
-            text-align: center;
-        }
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            color: #fff;
-            cursor: pointer;
-        }
     </style>
     <script>
-        // JavaScript to handle modal opening and closing
+        // JavaScript to add transition to the "About Me" heading
         document.addEventListener("DOMContentLoaded", function () {
-            const tabs = document.querySelectorAll(".tab");
-            const modals = document.querySelectorAll(".modal");
-            const closeButton = document.querySelectorAll(".close");
-
-            tabs.forEach((tab, index) => {
-                tab.addEventListener("click", () => {
-                    modals[index].style.display = "block";
-                });
-            });
-
-            closeButton.forEach((button, index) => {
-                button.addEventListener("click", () => {
-                    modals[index].style.display = "none";
-                });
-            });
+            const aboutMe = document.querySelector(".about-me");
+            aboutMe.classList.add("show");
         });
     </script>
 </head>
@@ -133,35 +95,14 @@
             </div>
         </div>
         <div class="tabs">
-            <div class="tab">Education</div>
-            <div class="tab">Experiences</div>
-            <div class="tab">Projects</div>
-            <div class="tab">Research Work</div>
-            <div class="tab">Publications</div>
-            <div class="tab">Achievements</div>
+            <a class="tab" href="education.html">Education</a>
+            <a class="tab" href="experiences.html">Experiences</a>
+            <a class="tab" href="projects.html">Projects</a>
+            <a class="tab" href="research.html">Research Work</a>
+            <a class="tab" href="publications.html">Publications</a>
+            <a class="tab" href="achievements.html">Achievements</a>
         </div>
     </div>
-
-    <!-- Modal for Education -->
-    <div class="modal">
-        <div class="modal-content">
-            <span class="close">X</span>
-            <h2>Education</h2>
-            <p>Content for the Education tab goes here.</p>
-        </div>
-    </div>
-
-    <!-- Modal for Experiences -->
-    <div class="modal">
-        <div class="modal-content">
-            <span class="close">X</span>
-            <h2>Experiences</h2>
-            <p>Content for the Experiences tab goes here.</p>
-        </div>
-    </div>
-
-    <!-- Add similar modal sections for other tabs -->
-
     <div class="content">
         <div class="about-me">
             <h2>About Me</h2>
