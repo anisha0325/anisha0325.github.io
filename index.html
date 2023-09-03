@@ -9,7 +9,10 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-image: url('background-image.jpg'); /* Replace with your background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             display: flex;
         }
         #left-pane {
@@ -19,9 +22,8 @@
             text-align: center;
             padding: 20px;
         }
-        #content {
-            width: 75%;
-            padding: 20px;
+        #left-pane img {
+            border-radius: 50%;
         }
         h1 {
             font-size: 36px;
@@ -32,60 +34,68 @@
         }
         .tab {
             padding: 10px 20px;
-            background-color: #333;
+            background-color: #222;
             color: #fff;
             text-decoration: none;
             border: 1px solid #333;
             display: block;
             margin: 10px 0;
+            transition: background-color 0.3s;
         }
         .tab:hover {
-            background-color: #555;
+            background-color: #444;
         }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: #fff;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        .contact-icons {
+            margin-top: 20px;
         }
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
+        .contact-icons a {
+            text-decoration: none;
             color: #fff;
+            margin: 0 10px;
+        }
+        .content {
+            width: 75%;
+            padding: 20px;
+        }
+        .about-me {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .about-me.show {
+            opacity: 1;
         }
     </style>
+    <script>
+        // JavaScript to add transition to the "About Me" heading
+        document.addEventListener("DOMContentLoaded", function () {
+            const aboutMe = document.querySelector(".about-me");
+            aboutMe.classList.add("show");
+        });
+    </script>
 </head>
 <body>
     <div id="left-pane">
         <img src="your-photo.jpg" alt="Your Photo" width="150">
         <h1>Your Name</h1>
-        <p>Contact Info:</p>
-        <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
+        <div class="contact-icons">
+            <a href="mailto:your@email.com"><img src="email-icon.png" alt="Email"></a>
+            <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+            <a href="https://github.com/your-github-profile" target="_blank"><img src="github-icon.png" alt="GitHub"></a>
+        </div>
         <div class="tabs">
-            <a class="tab" href="#">About Me</a>
-            <a class="tab" href="#">My Projects</a>
-            <a class="tab" href="#">Contact Me</a>
+            <a class="tab" href="#">Education</a>
+            <a class="tab" href="#">Experiences</a>
+            <a class="tab" href="#">Projects</a>
+            <a class="tab" href="#">Research Work</a>
+            <a class="tab" href="#">Publications</a>
+            <a class="tab" href="#">Achievements</a>
         </div>
     </div>
-    <div id="content">
-        <div class="container">
+    <div class="content">
+        <div class="about-me">
             <h2>About Me</h2>
             <p>Welcome to my personal website. Here, you can learn more about me and my interests.</p>
-
-            <h2>My Projects</h2>
-            <p>Check out some of the exciting projects I've worked on over the years.</p>
-
-            <h2>Contact Me</h2>
-            <p>Feel free to get in touch with me via email at <a href="mailto:your@email.com">your@email.com</a>.</p>
         </div>
-        <footer>
-            &copy; 2023 Your Name
-        </footer>
     </div>
 </body>
 </html>
