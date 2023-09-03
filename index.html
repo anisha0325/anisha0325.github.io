@@ -87,20 +87,33 @@
             z-index: 1;
             max-width: 200px; /* Adjust the maximum width as needed */
         }
+        .tab-content {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
     </style>
     <script>
-        // JavaScript to show/hide pop-up bubbles for tabs
+        // JavaScript to toggle tab content
         document.addEventListener("DOMContentLoaded", function () {
             const tabs = document.querySelectorAll(".tab");
-            const popups = document.querySelectorAll(".popup");
+            const tabContents = document.querySelectorAll(".tab-content");
+            const aboutMeTab = document.querySelector("#about-me-tab");
+
+            // Show "About Me" tab content by default
+            aboutMeTab.classList.add("active");
 
             tabs.forEach((tab, index) => {
-                tab.addEventListener("mouseover", () => {
-                    popups[index].style.display = "block";
-                });
+                tab.addEventListener("click", () => {
+                    // Hide all tab contents
+                    tabContents.forEach((content) => {
+                        content.classList.remove("active");
+                    });
 
-                tab.addEventListener("mouseout", () => {
-                    popups[index].style.display = "none";
+                    // Show the selected tab's content
+                    tabContents[index].classList.add("active");
                 });
             });
         });
@@ -108,28 +121,36 @@
 </head>
 <body>
     <div id="left-pane">
-        <div>
-            <img src="your-photo.jpg" alt="Your Photo" width="150">
-            <h1>Your Name</h1>
-            <div class="contact-icons">
-                <a href="mailto:your@email.com"><img src="email-icon.png" alt="Email" width="30"></a>
-                <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank"><img src="linkedin-icon.png" alt="LinkedIn" width="30"></a>
-                <a href="https://github.com/your-github-profile" target="_blank"><img src="github-icon.png" alt="GitHub" width="30"></a>
-            </div>
-        </div>
-        <div class="tabs">
-            <div class="tab">Education<div class="popup">Education content goes here.</div></div>
-            <div class="tab">Experiences<div class="popup">Experiences content goes here.</div></div>
-            <div class="tab">Projects<div class="popup">Projects content goes here.</div></div>
-            <div class="tab">Research Work<div class="popup">Research Work content goes here.</div></div>
-            <div class="tab">Publications<div class="popup">Publications content goes here.</div></div>
-            <div class="tab">Achievements<div class="popup">Achievements content goes here.</div></div>
-        </div>
+        <!-- Your left pane content here -->
     </div>
     <div class="content">
-        <div class="about-me">
+        <div class="tab-content active" id="about-me-tab">
             <h2>About Me</h2>
             <p>Welcome to my personal website. Here, you can learn more about me and my interests.</p>
+        </div>
+        <div class="tab-content" id="education-tab">
+            <h2>Education</h2>
+            <p>Education content goes here.</p>
+        </div>
+        <div class="tab-content" id="experiences-tab">
+            <h2>Experiences</h2>
+            <p>Experiences content goes here.</p>
+        </div>
+        <div class="tab-content" id="projects-tab">
+            <h2>Projects</h2>
+            <p>Projects content goes here.</p>
+        </div>
+        <div class="tab-content" id="research-tab">
+            <h2>Research Work</h2>
+            <p>Research Work content goes here.</p>
+        </div>
+        <div class="tab-content" id="publications-tab">
+            <h2>Publications</h2>
+            <p>Publications content goes here.</p>
+        </div>
+        <div class="tab-content" id="achievements-tab">
+            <h2>Achievements</h2>
+            <p>Achievements content goes here.</p>
         </div>
     </div>
 </body>
