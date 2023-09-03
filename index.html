@@ -38,6 +38,7 @@
         }
         .tabs {
             text-align: left;
+            height: 100%;
         }
         .tab {
             background-color: #222;
@@ -47,7 +48,7 @@
             display: flex; /* Use flexbox for alignment */
             align-items: center; /* Vertically center text within tab */
             justify-content: center; /* Horizontally center text within tab */
-            margin: 10px 0; /* Increased vertical margin for spacing between tabs */
+            margin-bottom: 10px; /* Increased vertical margin for spacing between tabs */
             transition: background-color 0.3s;
             padding: 15px 20px; /* Increased padding for tab text */
             font-size: 18px; /* Increased font size for tab text */
@@ -87,16 +88,9 @@
             z-index: 1;
             max-width: 200px; /* Adjust the maximum width as needed */
         }
-        .tab-content {
-            display: none;
-        }
-
-        .active {
-            display: block;
-        }
     </style>
     <script>
-        // JavaScript to toggle tab content
+        // JavaScript to show/hide pop-up bubbles for tabs
         document.addEventListener("DOMContentLoaded", function () {
             const tabs = document.querySelectorAll(".tab");
             const tabContents = document.querySelectorAll(".tab-content");
@@ -121,10 +115,27 @@
 </head>
 <body>
     <div id="left-pane">
-        <!-- Your left pane content here -->
+        <div>
+            <img src="your-photo.jpg" alt="Your Photo" width="150">
+            <h1>Your Name</h1>
+            <div class="contact-icons">
+                <a href="mailto:your@email.com"><img src="email-icon.png" alt="Email" width="30"></a>
+                <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank"><img src="linkedin-icon.png" alt="LinkedIn" width="30"></a>
+                <a href="https://github.com/your-github-profile" target="_blank"><img src="github-icon.png" alt="GitHub" width="30"></a>
+            </div>
+        </div>
+        <div class="tabs">
+            <div class="tab" id="about-me-tab">About Me<div class="popup">About Me content goes here.</div></div>
+            <div class="tab">Education<div class="popup">Education content goes here.</div></div>
+            <div class="tab">Experiences<div class="popup">Experiences content goes here.</div></div>
+            <div class="tab">Projects<div class="popup">Projects content goes here.</div></div>
+            <div class="tab">Research Work<div class="popup">Research Work content goes here.</div></div>
+            <div class="tab">Publications<div class="popup">Publications content goes here.</div></div>
+            <div class="tab">Achievements<div class="popup">Achievements content goes here.</div></div>
+        </div>
     </div>
     <div class="content">
-        <div class="tab-content active" id="about-me-tab">
+        <div class="tab-content active" id="about-me-content">
             <h2>About Me</h2>
             <p>Welcome to my personal website. Here, you can learn more about me and my interests.</p>
         </div>
