@@ -1,0 +1,116 @@
+###  With tabs as html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Personal Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('background-image.jpg'); /* Replace with your background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            min-height: 100vh;
+        }
+        #left-pane {
+            width: 25%;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        #left-pane img {
+            border-radius: 50%;
+            max-width: 100%; /* Ensure the image fits within its container */
+            height: auto; /* Maintain aspect ratio */
+        }
+        h1 {
+            font-size: 24px; /* Reduced font size for the name */
+            margin: 0;
+        }
+        .tabs {
+            text-align: left;
+            flex: 1; /* Fill available vertical space */
+
+        }
+        .tab {
+            background-color: #222;
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid #333;
+            display: flex; /* Use flexbox for alignment */
+            align-items: center; /* Vertically center text within tab */
+            justify-content: center; /* Horizontally center text within tab */
+            margin: 20px 0; /* Increased vertical margin for spacing between tabs */
+            transition: background-color 0.3s;
+            padding: 20px 20px; /* Increased padding for tab text */
+            font-size: 18px; /* Increased font size for tab text */
+        }
+        .tab:hover {
+            background-color: #444;
+        }
+        .contact-icons {
+            margin-top: 20px;
+        }
+        .contact-icons a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 10px;
+        }
+        .content {
+            width: 75%;
+            padding: 20px;
+        }
+        .about-me {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .about-me.show {
+            opacity: 1;
+        }
+    </style>
+    <script>
+        // JavaScript to add transition to the "About Me" heading
+        document.addEventListener("DOMContentLoaded", function () {
+            const aboutMe = document.querySelector(".about-me");
+            aboutMe.classList.add("show");
+        });
+    </script>
+</head>
+<body>
+    <div id="left-pane">
+        <div>
+            <img src="your-photo.jpg" alt="Your Photo" width="150">
+            <h1>Your Name</h1>
+            <div class="contact-icons">
+                <a href="mailto:your@email.com"><img src="email-icon.png" alt="Email" width="30"></a>
+                <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank"><img src="linkedin-icon.png" alt="LinkedIn" width="30"></a>
+                <a href="https://github.com/your-github-profile" target="_blank"><img src="github-icon.png" alt="GitHub" width="30"></a>
+            </div>
+        </div>
+        <div class="tabs">
+            <a class="tab" href="education.html">Education</a>
+            <a class="tab" href="experiences.html">Experiences</a>
+            <a class="tab" href="projects.html">Projects</a>
+            <a class="tab" href="research.html">Research Work</a>
+            <a class="tab" href="publications.html">Publications</a>
+            <a class="tab" href="achievements.html">Achievements</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="about-me">
+            <h2>About Me</h2>
+            <p>Welcome to my personal website. Here, you can learn more about me and my interests.</p>
+        </div>
+    </div>
+</body>
+</html>
