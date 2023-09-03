@@ -22,15 +22,16 @@
             color: #fff;
             text-align: center;
             padding: 20px;
-            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            height: 100vh; /* Set left pane height to fill the page */
         }
         #left-pane img {
             border-radius: 50%;
             max-width: 100%; /* Ensure the image fits within its container */
             height: auto; /* Maintain aspect ratio */
+            width: 80%; /* Increase the size of your photo */
         }
         h1 {
             font-size: 24px; /* Reduced font size for the name */
@@ -38,7 +39,7 @@
         }
         .tabs {
             text-align: left;
-            height: 100%;
+            flex-grow: 1; /* Allow the tabs to grow and fill the remaining space */
         }
         .tab {
             background-color: #222;
@@ -48,7 +49,7 @@
             display: flex; /* Use flexbox for alignment */
             align-items: center; /* Vertically center text within tab */
             justify-content: center; /* Horizontally center text within tab */
-            margin-bottom: 10px; /* Increased vertical margin for spacing between tabs */
+            margin: 10px 0; /* Increased vertical margin for spacing between tabs */
             transition: background-color 0.3s;
             padding: 15px 20px; /* Increased padding for tab text */
             font-size: 18px; /* Increased font size for tab text */
@@ -76,47 +77,12 @@
         .about-me.show {
             opacity: 1;
         }
-
-        /* Custom pop-up bubble styles */
-        .popup {
-            display: none;
-            position: absolute;
-            background-color: #333;
-            color: #fff;
-            border-radius: 5px;
-            padding: 10px;
-            z-index: 1;
-            max-width: 200px; /* Adjust the maximum width as needed */
-        }
     </style>
-    <script>
-        // JavaScript to show/hide pop-up bubbles for tabs
-        document.addEventListener("DOMContentLoaded", function () {
-            const tabs = document.querySelectorAll(".tab");
-            const tabContents = document.querySelectorAll(".tab-content");
-            const aboutMeTab = document.querySelector("#about-me-tab");
-
-            // Show "About Me" tab content by default
-            aboutMeTab.classList.add("active");
-
-            tabs.forEach((tab, index) => {
-                tab.addEventListener("click", () => {
-                    // Hide all tab contents
-                    tabContents.forEach((content) => {
-                        content.classList.remove("active");
-                    });
-
-                    // Show the selected tab's content
-                    tabContents[index].classList.add("active");
-                });
-            });
-        });
-    </script>
 </head>
 <body>
     <div id="left-pane">
         <div>
-            <img src="your-photo.jpg" alt="Your Photo" width="150">
+            <img src="your-photo.jpg" alt="Your Photo">
             <h1>Your Name</h1>
             <div class="contact-icons">
                 <a href="mailto:your@email.com"><img src="email-icon.png" alt="Email" width="30"></a>
@@ -125,44 +91,15 @@
             </div>
         </div>
         <div class="tabs">
-            <div class="tab" id="about-me-tab">About Me<div class="popup">About Me content goes here.</div></div>
-            <div class="tab">Education<div class="popup">Education content goes here.</div></div>
-            <div class="tab">Experiences<div class="popup">Experiences content goes here.</div></div>
-            <div class="tab">Projects<div class="popup">Projects content goes here.</div></div>
-            <div class="tab">Research Work<div class="popup">Research Work content goes here.</div></div>
-            <div class="tab">Publications<div class="popup">Publications content goes here.</div></div>
-            <div class="tab">Achievements<div class="popup">Achievements content goes here.</div></div>
+            <a class="tab" href="education.html">Education</a>
+            <a class="tab" href="experiences.html">Experiences</a>
+            <a class="tab" href="projects.html">Projects</a>
+            <a class="tab" href="research.html">Research Work</a>
+            <a class="tab" href="publications.html">Publications</a>
         </div>
     </div>
     <div class="content">
-        <div class="tab-content active" id="about-me-content">
-            <h2>About Me</h2>
-            <p>Welcome to my personal website. Here, you can learn more about me and my interests.</p>
-        </div>
-        <div class="tab-content" id="education-tab">
-            <h2>Education</h2>
-            <p>Education content goes here.</p>
-        </div>
-        <div class="tab-content" id="experiences-tab">
-            <h2>Experiences</h2>
-            <p>Experiences content goes here.</p>
-        </div>
-        <div class="tab-content" id="projects-tab">
-            <h2>Projects</h2>
-            <p>Projects content goes here.</p>
-        </div>
-        <div class="tab-content" id="research-tab">
-            <h2>Research Work</h2>
-            <p>Research Work content goes here.</p>
-        </div>
-        <div class="tab-content" id="publications-tab">
-            <h2>Publications</h2>
-            <p>Publications content goes here.</p>
-        </div>
-        <div class="tab-content" id="achievements-tab">
-            <h2>Achievements</h2>
-            <p>Achievements content goes here.</p>
-        </div>
+        <!-- Content will be loaded dynamically based on the clicked tab -->
     </div>
 </body>
 </html>
