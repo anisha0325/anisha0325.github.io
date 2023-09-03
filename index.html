@@ -27,13 +27,17 @@
             font-size: 36px;
             margin: 0;
         }
+        .tabs {
+            text-align: left;
+        }
         .tab {
             padding: 10px 20px;
             background-color: #333;
             color: #fff;
             text-decoration: none;
             border: 1px solid #333;
-            margin-right: 10px;
+            display: block;
+            margin: 10px 0;
         }
         .tab:hover {
             background-color: #555;
@@ -62,13 +66,13 @@
         <h1>Your Name</h1>
         <p>Contact Info:</p>
         <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
-    </div>
-    <div id="content">
-        <nav>
+        <div class="tabs">
             <a class="tab" href="#">About Me</a>
             <a class="tab" href="#">My Projects</a>
             <a class="tab" href="#">Contact Me</a>
-        </nav>
+        </div>
+    </div>
+    <div id="content">
         <div class="container">
             <h2>About Me</h2>
             <p>Welcome to my personal website. Here, you can learn more about me and my interests.</p>
