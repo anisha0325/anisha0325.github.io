@@ -7,15 +7,15 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0; /* Background color for the page */
-            background-image: url('background-white.png'); /* Replace with your background image URL */
+            background-image: url('your-background-image.jpg'); /* Replace with your background image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center; /* Center align content horizontally */
-            align-items: center; /* Center align content vertically */
+            flex-direction: column; /* Align content in a column */
+            align-items: center; /* Center align content horizontally */
             min-height: 100vh; /* Ensure the content takes up the full viewport height */
-        
         }
 
         /* Styling for the headings */
@@ -24,7 +24,6 @@
             text-decoration: underline;
             margin-top: 20px;
             text-align: center; /* Center align the headings */
-
         }
 
         /* Styling for the container divs */
@@ -34,13 +33,20 @@
             border-radius: 10px;
             margin: 20px;
             text-align: center; /* Center align the content within each section */
-
         }
 
         /* Styling for the lists */
         ul {
             list-style-type: disc;
             padding-left: 20px;
+        }
+
+        /* Styling for the back button */
+        .back-button {
+            cursor: pointer;
+            font-size: 24px;
+            margin-top: 20px;
+            color: #333; /* Change the color to match your design */
         }
     </style>
 </head>
@@ -74,6 +80,7 @@
             <!-- Add more research projects here -->
         </ul>
     </div>
+
     <!-- Back button element -->
     <div class="back-button" onclick="goBack()">&#10006; Go Back</div>
 
