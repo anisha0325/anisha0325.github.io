@@ -10,6 +10,11 @@
             background-color: #f0f0f0; /* Background color for the page */
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center; /* Center align content horizontally */
+            align-items: center; /* Center align content vertically */
+            min-height: 100vh; /* Ensure the content takes up the full viewport height */
+        
         }
 
         /* Styling for the headings */
@@ -17,6 +22,8 @@
             font-weight: bold;
             text-decoration: underline;
             margin-top: 20px;
+            text-align: center; /* Center align the headings */
+
         }
 
         /* Styling for the container divs */
@@ -25,6 +32,8 @@
             padding: 20px;
             border-radius: 10px;
             margin: 20px;
+            text-align: center; /* Center align the content within each section */
+
         }
 
         /* Styling for the lists */
@@ -64,5 +73,14 @@
             <!-- Add more research projects here -->
         </ul>
     </div>
+    <!-- Back button element -->
+    <div class="back-button" onclick="goBack()">&#10006; Go Back</div>
+
+    <script>
+        // JavaScript function to go back to the previous page
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </body>
 </html>
