@@ -25,10 +25,12 @@
             opacity: 0;
             transform: translateX(-20px);
             transition: opacity 0.5s ease-in, transform 0.5s ease-in;
-            margin-bottom: 10px; /* Adjust the margin to control the space between bullets */
-            font-size: 1.5em; /* Increase the font size by 2 times */
+            margin-bottom: 10px;
+            font-size: 2em;
             position: relative;
-
+            background-color: rgba(173, 216, 230, 0.5); /* Light blue transparent background */
+            padding: 10px; /* Adjust padding as needed */
+            border-radius: 5px; /* Rounded corners for the box */
         }
 
 
@@ -47,14 +49,7 @@
         .list-item-4 {
             transition-delay: 2s;
         }
-        .box {
-            position: absolute;
-            width: 100%;
-            height: 20px; /* Adjust the height of the box as needed */
-            background-color: rgba(173, 216, 230, 0.5); /* Light blue transparent background */
-            bottom: -10px; /* Half of the margin-bottom value to center the box */
-        }
-        /* Add more list items and adjust the transition delays as needed */
+
 
         .visible {
             opacity: 1;
