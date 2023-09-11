@@ -25,12 +25,13 @@
             opacity: 0;
             transform: translateX(-20px);
             transition: opacity 0.5s ease-in, transform 0.5s ease-in;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             font-size: 1.5em;
             position: relative;
             background-color: rgba(173, 216, 230, 0.5); /* Light blue transparent background */
             padding: 10px; /* Adjust padding as needed */
             border-radius: 5px; /* Rounded corners for the box */
+            text-align: center; /* Center-align text */
         }
 
 
@@ -39,16 +40,19 @@
         }
 
         .list-item-2 {
-            transition-delay: 1s;
+            transition-delay: 0.5s;
         }
 
         .list-item-3 {
-            transition-delay: 1.5s;
+            transition-delay: 0.5s;
         }
 
         .list-item-4 {
-            transition-delay: 2s;
+            transition-delay: 0.5s;
         }
+        .list-item-5 {
+            transition-delay: 0.5s;
+        }       
 
 
         .visible {
@@ -74,10 +78,11 @@
 <body>
     <span class="cross-button" onclick="goBack()">&#10006;</span>
     <ul>
-        <li class="list-item-1"><strong>Data Scientist, <em>Micron Technology </em></strong> (Aug'22 - Present)<br>Working with semiconductor fabrication data, creating end-to-end prediction pipelines, utilizing tools like GCS, Snowflake, Pyspark and Airflow for automation and analysis.<div class="box"></div></li>
-        <li class="list-item-2"><strong>Julia Statistics Developer, <em>XKDR </em></strong> (Jan'22 - Apr'22)<br>Contributed to the Surjey.jl package in Julia, required to study complex survey data..<div class="box"></div></li>
-        <li class="list-item-3"><strong>Data Science Intern, <em>Delab Research Pvt. Ltd. </em></strong> (Sep'21 - Dec'21)<br>Curated datasets, analyzed papers, deployed classical ML and DL models for a smart energy monitoring system and day-ahead solar energy forecasting.<div class="box"></div></li>
-        <li class="list-item-4"><strong>Summer Intern (Digital & AI) , <em>Legato Health Technologies </em></strong> (Jul'21 - Sep'21)<br>Generated statistical quality control parameters for models processing audio transcripts, performed root cause analysis to address data anomalies and evaluate model performance.<div class="box"></div></li>
+        <li class="list-item-1"><strong>Research Associate, <em>Indian Institute of Technology, Patna </em></strong> (Feb'23 - Present)<br>Utilizing Multi-modal data and multi-tasking frameworks for tasks such as clinical dialogue summarization, medical domain identification, dialogue generation.<div class="box"></div></li>       
+        <li class="list-item-2"><strong>Data Scientist, <em>Micron Technology </em></strong> (Aug'22 - Present)<br>Working with semiconductor fabrication data, creating end-to-end prediction pipelines, utilizing tools like GCS, Snowflake, Pyspark and Airflow for automation and analysis.<div class="box"></div></li>
+        <li class="list-item-3"><strong>Julia Statistics Developer, <em>XKDR </em></strong> (Jan'22 - Apr'22)<br>Contributed to the Surjey.jl package in Julia, required to study complex survey data..<div class="box"></div></li>
+        <li class="list-item-4"><strong>Data Science Intern, <em>Delab Research Pvt. Ltd. </em></strong> (Sep'21 - Dec'21)<br>Curated datasets, analyzed papers, deployed classical ML and DL models for a smart energy monitoring system and day-ahead solar energy forecasting.<div class="box"></div></li>
+        <li class="list-item-5"><strong>Summer Intern (Digital & AI) , <em>Legato Health Technologies </em></strong> (Jul'21 - Sep'21)<br>Generated statistical quality control parameters for models processing audio transcripts, performed root cause analysis to address data anomalies and evaluate model performance.<div class="box"></div></li>
         <!-- Add more list items here -->
     </ul>
 
