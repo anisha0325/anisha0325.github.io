@@ -26,7 +26,9 @@
             transform: translateX(-20px);
             transition: opacity 0.5s ease-in, transform 0.5s ease-in;
             margin-bottom: 10px; /* Adjust the margin to control the space between bullets */
-            font-size: 2em; /* Increase the font size by 2 times */
+            font-size: 1.5em; /* Increase the font size by 2 times */
+            position: relative;
+
         }
 
 
@@ -45,7 +47,13 @@
         .list-item-4 {
             transition-delay: 2s;
         }
-
+        .box {
+            position: absolute;
+            width: 100%;
+            height: 20px; /* Adjust the height of the box as needed */
+            background-color: rgba(255, 255, 255, 0.5); /* Transparent white background */
+            bottom: -10px; /* Half of the margin-bottom value to center the box */
+        }
         /* Add more list items and adjust the transition delays as needed */
 
         .visible {
@@ -56,10 +64,10 @@
 </head>
 <body>
     <ul>
-        <li class="list-item-1"><strong>Degree : </strong>Master's of Science (MSc.) in Data Science<br><strong>Institution : </strong> Chennai Mathematical Institute (CMI) <br> <strong>Tenure : </strong>2020-2022</li>
-        <li class="list-item-2">Item 2</li>
-        <li class="list-item-3">Item 3</li>
-        <li class="list-item-4">Item 4</li>
+        <li class="list-item-1"><strong>Degree : </strong>Master's of Science (MSc.) in Data Science<br><strong>Institution : </strong> Chennai Mathematical Institute (CMI) <br> <strong>Tenure : </strong>2020-2022<div class="box"></div></li>
+        <li class="list-item-2">Item 2<div class="box"></div></li>
+        <li class="list-item-3">Item 3<div class="box"></div></li>
+        <li class="list-item-4">Item 4<div class="box"></div></li>
         <!-- Add more list items here -->
     </ul>
 
