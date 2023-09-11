@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Transitioning Bullet Points with Background Image</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('background-white.png'); /* Replace 'your-background-image.jpg' with your image file */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding: 0;
+        }
+
+        li {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+            position: relative;
+            background-color: rgba(173, 216, 230, 0.5); /* Light blue transparent background */
+            padding: 10px; /* Adjust padding as needed */
+            border-radius: 5px; /* Rounded corners for the box */
+        }
+
+
+        .list-item-1 {
+            transition-delay: 0.5s;
+        }
+
+        .list-item-2 {
+            transition-delay: 1s;
+        }
+
+        .list-item-3 {
+            transition-delay: 1.5s;
+        }
+
+        .list-item-4 {
+            transition-delay: 2s;
+        }
+
+
+        .visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        /* Style for the cross button */
+        .cross-button {
+            position: absolute;
+            top: 10px; /* Adjust the position as needed */
+            right: 10px; /* Adjust the position as needed */
+            font-size: 1.5em;
+            text-decoration: none;
+            color: #333; /* Cross button color */
+            cursor: pointer;
+        }
+
+        .cross-button:hover {
+            color: #ff0000; /* Cross button color on hover */
+        }
+    </style>
+</head>
+<body>
+    <span class="cross-button" onclick="goBack()">&#10006;</span>
+    <ul>
+        <li class="list-item-1"><strong>Degree : </strong>Master's of Science (MSc.) in Data Science<br><strong>Institution : </strong> Chennai Mathematical Institute (CMI) <br> <strong>Tenure : </strong>2020-2022<br> <strong>Score : </strong>9.44 CGPA<div class="box"></div></li>
+        <li class="list-item-2"><strong>Degree : </strong>Bachelor's of Science (BSc.) in Mathematics<br><strong>Institution : </strong> St. Xavier's College, Kolkata <br> <strong>Tenure : </strong>2017-2020<br> <strong>Score : </strong>7.67 CGPA<div class="box"></div></li>
+        <li class="list-item-3"><strong>Degree : </strong>ISC (XII) <br><strong>Institution : </strong> Mary Immaculate School <br> <strong>Tenure : </strong>2015-2017<br> <strong>Score : </strong>96%<div class="box"></div></li>
+        <li class="list-item-4"><strong>Degree : </strong>ICSE (X)<br><strong>Institution : </strong> Mary Immaculate School <br> <strong>Tenure : </strong>2001-2015<br> <strong>Score : </strong>96.8%<div class="box"></div></li>
+        <!-- Add more list items here -->
+    </ul>
+
+    <script>
+
+        // JavaScript function to go back one step in the browser history
+        function goBack() {
+            window.history.back();
+        }
+        // JavaScript to add the 'visible' class to each list item with a delay
+        const listItems = document.querySelectorAll('li');
+        listItems.forEach((item, index) => {
+            setTimeout(() => {
+                item.classList.add('visible');
+            }, index * 500); // Adjust the delay (in milliseconds) between each item
+        });
+    </script>
+</body>
+</html>
