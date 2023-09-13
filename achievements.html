@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Background Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('background-white.jpg'); /* Replace with your background image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .content-box {
+            background-color: rgba(173, 216, 230, 0.5); /* Light blue transparent background */
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            width: 80%;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        /* Style for the cross button */
+        .cross-button {
+            position: absolute;
+            top: 10px; /* Adjust the position as needed */
+            right: 10px; /* Adjust the position as needed */
+            font-size: 1.5em;
+            text-decoration: none;
+            color: #333; /* Cross button color */
+            cursor: pointer;
+        }
+
+        .cross-button:hover {
+            color: #ff0000; /* Cross button color on hover */
+        }
+
+    </style>
+</head>
+<body>
+    <span class="cross-button" onclick="goBack()">&#10006;</span>
+    <div class="content-box">
+        <ul>
+            <li>Volunteered at <strong>The International Conference on Learning Representations (ICLR'23).</strong></li>
+            <li><strong>All India Rank 4</strong>, in the entrance exam for MSQMS course of Indian Statistical Institute (ISI).</li>
+            <li>Secured <strong>1st Rank</strong>, in school in ISC (Class XII).</li>
+            <li>Secured <strong>3rd Rank</strong>, in school in ICSE (Class X).</li>
+        </ul>
+    </div>
+
+    <!-- Back button element -->
+    <div class="back-button" onclick="goBack()">&#10006;</div>
+
+    <script>
+        // JavaScript function to go back one step in the browser history
+        function goBack() {
+            window.history.back();
+        }
+
+    </script>
+</body>
+</html>
