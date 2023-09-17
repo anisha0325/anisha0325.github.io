@@ -3,57 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills and Hobbies</title>
+    <title>Skills</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0; /* Background color for the page */
+            background-image: url('background-white.png'); /* Replace with your background image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
             margin: 0;
             padding: 0;
-        }
-
-        /* Styling for the container divs */
-        .container {
             display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
-        /* Styling for the left and right boxes */
-        .box {
-            flex: 1;
+        .content-box {
             background-color: rgba(173, 216, 230, 0.5); /* Light blue transparent background */
             padding: 20px;
             border-radius: 10px;
-            margin: 20px;
+            text-align: center;
+            width: 80%;
         }
 
-        /* Styling for headings */
-        h1 {
-            font-weight: bold;
-            text-decoration: underline;
-        }
-
-        /* Styling for sections */
         ul {
             list-style-type: disc;
             padding-left: 20px;
+            text-align: center;
         }
+
+        /* Style for the cross button */
+        .cross-button {
+            position: absolute;
+            top: 10px; /* Adjust the position as needed */
+            right: 10px; /* Adjust the position as needed */
+            font-size: 3em;
+            text-decoration: none;
+            color: #333; /* Cross button color */
+            cursor: pointer;
+        }
+
+        .cross-button:hover {
+            color: #ff0000; /* Cross button color on hover */
+        }
+
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="box">
-            <h1>Skills</h1>
-            <ul>
-                <li>Languages</li>
-                <li>Coding</li>
-                <li>Tools</li>
-                <li>Misc</li>
-            </ul>
-        </div>
-        <div class="box">
-            <h1>Hobbies</h1>
-            <!-- Add hobbies or content here -->
-        </div>
+    <span class="cross-button" onclick="goBack()">&#10006;</span>
+    <div class="content-box">
+        <ul>
+            <li><strong>Language : </strong>Strong reading, writing and speaking competencies for English, Hindi and Bengali</li>
+            <li><strong>Coding : </strong>, Python, R, SQL, Julia, LATEX.<br><br></li>
+            <li><strong>Tools : </strong>PyTorch, Tensorflow, PySpark, Snowflake, MySQL, Git, Google Cloud Services, Airflow.<br><br></li>
+            <li><strong>Interpersonal : </strong> Academic research, Teaching, Content creation..<br><br></li>
+        </ul>
     </div>
+
+
+    <script>
+        // JavaScript function to go back one step in the browser history
+        function goBack() {
+            window.history.back();
+        }
+
+    </script>
 </body>
 </html>
