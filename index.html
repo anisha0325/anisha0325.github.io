@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anisha Saha</title>
+    <style>
+        body {
+            font-family: Roboto;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: #D3D3D3;
+            font-size: 15px; /* Reduced overall font size */
+        }
+
+        header {
+            background-color: black;
+            color: #D3D3D3;
+            padding: 11px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav a {
+            color: #D3D3D3;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 5px;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            align-items: flex-start;
+        }
+
+        .profile {
+            max-width: 200px;
+            margin-right: 60px; /* Increased distance between image and "About Me" section */
+            text-align: center;
+        }
+
+        .profile img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .profile .name {
+            margin: 10px 0 5px;
+            font-size: 18px; /* Reduced size of name */
+            font-weight: bold;
+            font-family: 'Lucida Calligraphy', cursive; /* Lucida Calligraphy font */
+            color: white; /* Darker blue color */
+        }
+
+        .profile .bio {
+            font-size: 13px; /* Reduced size of bio */
+            color: white;
+        }
+
+        .write-up {
+            flex: 1;
+            text-align: left;
+        }
+
+        .icons {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .icons img {
+            width: 30px; /* Reduced size of icons */
+            height: 30px;
+            margin: 0 5px;
+        }
+
+        .scrollable {
+            max-height: 100px; /* Set the desired height */
+            overflow-y: auto;  /* Enable vertical scrolling */
+            border: 1px solid #ccc; /* Optional: add a border for better visibility */
+            padding: 5px; /* Optional: add some padding */
+        }
+
+        h2 {
+            font-family: 'Roboto';
+            font-size: 18px; /* Adjusted size for headings */
+            color: #D3D3D3;
+        }
+        
+        a {
+            color: #1e90ff; /* Different color for the links */
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="aboutme.html"><b>About Me</b></a>
+            <a href="publications.html"><b>Publications</b></a>
+            <a href="research.html"><b>Research</b></a>
+            <a href="projects.html"><b>Projects</b></a>
+            <a href="a-space.html"><b>Gallery</b></a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <div class="profile">
+            <img src="your_picture.jpg" alt="Your Picture">
+            <div class="name">Anisha Saha</div>
+            <div class="bio">ELLIS PhD student | MPI-Informatics & The University of Edinburgh</div>
+            <div class="icons">
+                <a href="mailto:anisha0325@gmail.com" title="Email"><img src="email_icon.png" alt="Email"></a>
+                <a href="https://www.linkedin.com/in/anisha0398/" title="LinkedIn" target="_blank"><img src="linkedin_icon.png" alt="LinkedIn"></a>
+                <a href="https://x.com/anishashhh" title="Twitter" target="_blank"><img src="X.png" alt="Twitter"></a> <!-- Twitter icon added here -->
+                <a href="your-cv.pdf" title="Curriculum Vitae" target="_blank"><img src="cv_icon.png" alt="CV"></a>
+                <a href="https://scholar.google.com/citations?user=bqVlnUMAAAAJ&hl=en" title="Google Scholar" target="_blank"><img src="google_scholar_icon.png" alt="Google Scholar"></a>
+                <a href="https://github.com/anisha0325" title="GitHub" target="_blank"><img src="github_icon.png" alt="GitHub"></a>
+            </div>
+        </div>
+        <div class="write-up">
+            <h2>About Me</h2>
+            <p>I'm an <a href="https://ellis.eu/" target="_blank">ELLIS</a> PhD student at <a href="https://www.mpi-inf.mpg.de/home" target="_blank">The Max Planck Institute for Informatics</a> at
+                <a href="https://www.uni-saarland.de/en/home.html" target="_blank">Saarland University</a> and <a href="https://www.ed.ac.uk/" target="_blank">The University of Edinburgh</a>, advised
+                by <a href="https://www.mpi-inf.mpg.de/departments/mlp/vera-demberg" target="_blank">Prof. Vera Demberg</a> and
+            <a href="https://homepages.inf.ed.ac.uk/thospeda/" target="_blank">Prof. Timothy Hospedales</a>. Before this, I worked at Micron Technology as a Data Scientist after completing my MSc. 
+                in Data Science from Chennai Mathematical Institute. I had the opportunity to collaborate with eminent researchers like 
+                <a href="https://www.iitp.ac.in/~sriparna/" target="_blank">Prof. Sriparna Saha</a>, 
+                <a href="https://precog.iiit.ac.in/" target="_blank">Prof. Ponnurangam Kumaraguru</a> and 
+                <a href="https://adammo12.github.io/adamjatowt/" target="_blank">Prof. Adam Jatowt</a> on multimodal learning, model augmentation and temporal understanding of LLMs (<a href="https://anisha0325.github.io/anisha.github.io/research.html" target="_blank">details</a>).</p>
+            <p>My present research involves deciphering the intentions conveyed by combining language and visuals, wherein an individual modality might convey a different meaning altogether. 
+                    I'm also interested in the fusion mechanisms of VLMs, multi-modal evaluation and jailbreaking.</p>
+            <br>
+            <h2>News</h2>
+            <div class="scrollable">
+                <ul>
+                    <li>Joined the 2024 ELLIS PhD Cohort. Find my <a href="https://ellis.eu/news/ellis-phd-program-attracts-global-ai-talent-to-europe-120-early-career-researchers-join-the-network-in-2024" target="_blank">quote</a>.</li>
+                    <li>Attented the 18th Academic Research and Careers for Students (ARCS) Symposium by ACM at NISER, Bhubaneshwar. <a href="https://www.linkedin.com/posts/anisha0398_acm-acmindia-arcs2024-activity-7162104439112224768-oJH_?utm_source=share&utm_medium=member_desktop" target="_blank">Here</a> are a few snaps from the event.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

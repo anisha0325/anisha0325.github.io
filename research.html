@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research</title>
+    <style>
+        body {
+            font-family: Roboto;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: #D3D3D3;
+            font-size: 15px; /* Reduced overall font size */
+        }
+
+        header {
+            background-color: black;
+            color: #D3D3D3;
+            padding: 11px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav a {
+            color: #D3D3D3;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 5px;
+        }
+
+        ul.arrow-bullets {
+            list-style-type: none; /* Remove default bullets */
+            padding-left: 20px; /* Add padding to indent list */
+        }
+
+        ul.arrow-bullets li {
+            position: relative;
+            padding-left: 20px; /* Indent text to make room for arrow */
+        }
+
+        ul.arrow-bullets li:before {
+            content: "→"; /* Unicode for arrowhead */
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #87CEEB; /* Arrow color */
+        }
+
+        h2 {
+            font-family: 'Roboto'; /* Using Lucida Calligraphy for headings */
+            font-size: 20px; /* Increased size for headings */
+            color: #D3D3D3; /* Medium blue color for headings */
+            margin-bottom: 20px; /* Increased bottom margin for separation */
+        }
+
+        section {
+            max-width: 850px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: black;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        .publication,
+        .research-topic a {
+            display: inline-block;
+            margin-right: 10px; /* Adjust the value as needed */
+            margin-top: 5px;
+            text-decoration: none;
+        }
+        .research-topic h3 {
+            margin-top: 0;
+            color: #87CEEB; /* Deep blue color for publication names */
+            font-size: 17px; /* Increased size for headings */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="aboutme.html"><b>About Me</b></a>
+            <a href="publications.html"><b>Publications</b></a>
+            <a href="research.html"><b>Research</b></a>
+            <a href="projects.html"><b>Projects</b></a>
+            <a href="a-space.html"><b>Gallery</b></a>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Research Experiences</h2>
+        <ul>
+        <div class="research-topic">
+            <li><h3>Improving downstream task performance in code-mixed setting</h3>
+            <p>Supervisor(s): Prof. Dr. Ponnurangam Kumaraguru</p>
+            <p>Description: We work on improving task performance in code-mixed settings to address challenges of code-mixed data scarcity, by exploring multi-turn language interpretability
+            of PLMs and LLMs, transfer learning techniques, etc.</p></li>
+        </div>
+        <div class="research-topic">
+            <li><h3>Temporal reasoning and future event prediction</h3>
+            <p>Supervisor(s): Prof. Dr. Adam Jatowt</p>
+            <p>Description: We aim to understand the ability of LLMs in temporal reasoning, predicting future events with or without a given context,
+                prompt designing and improving event prediction in general. </p></li>
+        </div>
+
+        <div class="research-topic">
+            <li><h3>Leveraging multimodal data for healthcare and clinical applications</h3>
+            <p>Supervisor(s): Prof. Dr. Sriparna Saha, Abishek Tiwari</p>
+            <p>Description: We focus on learning from text, image, speech and video for automatic disease diagnosis, response and report generation,
+                clinical conversation summarization and other healthcare applications</p></li>
+        </div>
+
+        <div class="research-topic">
+            <li><h3>The effect of improving isotropy of embeddings in downstream tasks across domains</h3>
+            <p>Supervisor(s): Dr. Venkatesh Vinayakarao</p>
+            <p>Description: Our experiments involve finding out whether increasing isotropy of embeddings improve the quality of generation and prediction
+                across tasks in various domains.</p></li>
+        </div>
+        </ul>
+    </section>
+
+</body>
+
+</html>

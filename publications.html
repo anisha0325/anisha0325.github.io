@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications</title>
+    <style>
+        body {
+            font-family: Roboto;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: #D3D3D3;
+            font-size: 15px; /* Reduced overall font size */
+        }
+
+        header {
+            background-color: black;
+            color: #D3D3D3;
+            padding: 11px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav a {
+            color: #D3D3D3;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 5px;
+        }
+
+        h2 {
+            font-family: 'Roboto'; /* Using Lucida Calligraphy for headings */
+            font-size: 20px; /* Increased size for headings */
+            color: #D3D3D3; /* Medium blue color for headings */
+            margin-bottom: 20px; /* Increased bottom margin for separation */
+        }
+
+        section {
+            max-width: 850px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: black;
+            text-align: left;
+        }
+
+        .publication {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: flex-start; /* Align items at the start of flex container */
+        }
+
+        .publication img {
+            width: 250px; /* Larger size for images */
+            height: auto; /* Maintain aspect ratio */
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+
+        .publication h3 {
+            margin-top: 0;
+            color: #87CEEB; /* Deep blue color for publication names */
+            font-size: 16px; /* Increased size for headings */
+        }
+
+        .publication p:nth-of-type(3) {
+            font-style: italic; /* Italicize the third line */
+            color: #666; /* Grey color for the third line */
+        }
+
+        .publication p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="aboutme.html"><b>About Me</b></a>
+            <a href="publications.html"><b>Publications</b></a>
+            <a href="research.html"><b>Research</b></a>
+            <a href="projects.html"><b>Projects</b></a>
+            <a href="a-space.html"><b>Gallery</b></a>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Publications</h2>
+        <div class="publication">
+            <img src="image3.jpg" alt="Publication Image">
+            <div>
+                <h3>Two eyes, Two views, and finally, One summary! Towards Multi-modal Multi-tasking Knowledge-Infused Medical Dialogue Summarization</h3>
+                <p><strong>Anisha Saha</strong>, Abhisek Tiwari, Sai Ruthvik, Sriparna Saha</p>
+                <p><em>Arxiv</em></p>
+                <p><a href="https://arxiv.org/abs/2407.15237">Link</a>    <a href="https://github.com/NLP-RL/MMK-Summation" target="_blank">Code</a></p>
+            </div>      
+        </div>
+        <div class="publication">
+            <img src="image1.JPG" alt="Publication Image">
+            <div>
+                <h3>Experience and Evidence are the eyes of an excellent summarizer! Towards Knowledge Infused Multi-modal Clinical Conversation Summarization</h3>
+                <p>Abhisek Tiwari, <strong>Anisha Saha</strong>, Sriparna Saha, Pushpak Bhattacharyya, Minakshi Dhar</p>
+                <p><em>CIKM '23: Proceedings of the 32nd ACM International Conference on Information and Knowledge Management</em></p>
+                <p><a href="https://dl.acm.org/doi/abs/10.1145/3583780.3614870">Link</a>    <a href="https://github.com/NLP-RL/MM-CliConSummation" target="_blank">Code</a></p>
+            </div>
+        </div>
+
+        <div class="publication">
+            <img src="image2.JPG" alt="Publication Image">
+            <div>
+                <h3>Guide To Distributed Representations in ML</h3>
+                <p><strong>Anisha Saha</strong>, Chandrashish Prasad, Venkatesh Vinayakarao</p>
+                <p><em>Analytics India Magazine, 2021</em></p>
+                <p><a href="https://analyticsindiamag.com/guide-to-distributed-representations-in-ml/">Link</a>    <a href="https://github.com/anisha0325/Distributed-Representations-Made-Easy" target="_blank">Code</a></p>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

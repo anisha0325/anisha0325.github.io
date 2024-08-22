@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <style>
+        body {
+            font-family: Roboto;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: #D3D3D3;
+            font-size: 15px; /* Reduced overall font size */
+        }
+
+        header {
+            background-color: black;
+            color: #D3D3D3;
+            padding: 11px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav a {
+            color: #D3D3D3;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 5px;
+        }
+
+        h2 {
+            font-family: 'Roboto'; /* Using Lucida Calligraphy for headings */
+            font-size: 20px; /* Increased size for headings */
+            color: #D3D3D3; /* Medium blue color for headings */
+            margin-bottom: 20px; /* Increased bottom margin for separation */
+        }
+
+        section {
+            max-width: 850px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: black;
+            text-align: left;
+        }
+        a {
+            color: #1e90ff; /* Different color for the links */
+            text-decoration: none;
+        }
+
+        .publication {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: flex-start; /* Align items at the start of flex container */
+        }
+
+        .publication img {
+            width: 250px; /* Larger size for images */
+            height: auto; /* Maintain aspect ratio */
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+
+        .publication h3 {
+            margin-top: 0;
+            color: #87CEEB; /* Deep blue color for publication names */
+            font-size: 16px; /* Increased size for headings */
+        }
+
+        .publication p:nth-of-type(3) {
+            font-style: italic; /* Italicize the third line */
+            color: #666; /* Grey color for the third line */
+        }
+
+        .publication p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="aboutme.html"><b>About Me</b></a>
+            <a href="publications.html"><b>Publications</b></a>
+            <a href="research.html"><b>Research</b></a>
+            <a href="projects.html"><b>Projects</b></a>
+            <a href="a-space.html"><b>Gallery</b></a>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Projects</h2>
+        <div class="publication">
+            <img src="ode.png" alt="Publication Image">
+            <div>
+                <h3>Integrating Factors of 1st order Ordinary Differential Equations</h3>
+                <p>This was my Bachelor's dissertation. Here, we find a correlation between the integrating factors of a first order ordinary differential equation and infinitesimal Lie group transformations.We show that corresponding to each integrating factor of an Ordinary Differential Equation (ODE), we can find a symmetry group under which the ODE is form-invariant.</p>
+                <p><b>Organization</b>: St. Xavier's College, Kolkata</p>
+            </div>      
+        </div>
+        <div class="publication">
+            <img src="retino.png" alt="Publication Image">
+            <div>
+                <h3>Diabetic Retinopathy Detection</h3>
+                <p>Created an automated analysis system capable of classifying each retinal image to one of the classes (normal, mild, moderate, severe and proliferative), corresponding to the severity of the disease. Compared the performance of various approaches and models performing this classification task.</p>
+                <p><b>Organization</b>: Chennai Mathematical Institute</p>
+            </div>
+        </div>
+        <div class="publication">
+            <img src="facial.jpeg" alt="Publication Image">
+            <div>
+                <h3>Facial Recognition using Eigenfaces</h3>
+                <p>We compared characteristics of a face image to that of face images of known individuals and non-face images. The approach treats the images as two-dimensional, rather than requiring three-dimensional geometry, by taking advantage of the fact that faces are generally upright, and may thus be described in terms of two-dimensional characteristics. The method used is Eigenfaces, where we project the images into a low-dimensional feature space using Principal Component Analysis.</p>
+                <p><b>Organization</b>: Chennai Mathematical Institute</p>
+            </div>
+        </div>
+        <div class="publication">
+            <img src="solar.jpg" alt="Publication Image">
+            <div>
+                <h3>Day Ahead Solar Photovoltaic Forecasting of Power Output : A Comparative Study</h3>
+                <p>The project presents a comparative study of the prediction models, generated using the techniques of ARIMA, SVM, ANN and XGBoost, for forecasting day ahead power output of Photovoltaic systems. The aim is to give a general overview of the relative performance of the methods, thus evaluating how machine learning techniques perform relative to traditional time series forecasting techniques. The paper also revolves around finding those important features which are an integral part of day ahead energy productions.</p>
+                <p><b>Organization</b>: Chennai Mathematical Institute, <a href="https://delabresearch.com/" target="_blank">Delab Research</a></p>
+            </div>
+        </div>
+        <div class="publication">
+            <img src="netflix.jpg" alt="Publication Image">
+            <div>
+                <h3>Unreeling Netflix</h3>
+                <p>We built a movie recommendation engine on Apache PySpark. The project demonstrated how Netflix uses a recommendation system based on Big Data to recommend movies to its users. It focused on collaborative vs content-based filtering for reccomendation.</p>
+                <p><b>Organization</b>: Chennai Mathematical Institute</p>
+            </div>
+        </div>
+
+    </section>
+</body>
+
+</html>

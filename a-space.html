@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Roboto;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-size: 15px;
+        }
+        header {
+            background-color: black;
+            color: #D3D3D3;
+            padding: 11px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav a {
+            color: #D3D3D3;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 5px;
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 36px;
+            margin-top: 20px;
+        }
+
+        p.quote {
+            font-family: 'Great Vibes', cursive;
+            font-size: 16px;
+            margin: 10px 0 40px 0;
+            color: #71b1c4;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            justify-items: center;
+            margin: 0 auto;
+            padding: 10px;
+            max-width: 1200px;
+        }
+
+        .gallery-item {
+            text-align: center;
+            width: 100%;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            border: 3px solid white;
+            max-width: 300px;
+            display: block;
+            margin: 0 auto; /* Center the image */
+        }
+
+        .gallery-item caption {
+            margin-top: 10px;
+            font-size: 9px;
+            display: block; /* Ensures caption is entirely below the image */
+            font-family: Roboto;
+            text-align: center;
+            max-width: 300px;
+            margin: 0 auto; /* Center the caption */
+            color:#D3D3D3;
+        }
+
+        /* Ensure the last row is centered if it has fewer than 3 items */
+        .gallery-item:nth-last-child(-n+3) {
+            justify-self: center;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content img {
+            width: 80%;
+            max-width: 700px;
+            border: 3px solid white;
+        }
+
+        /* Close button */
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="aboutme.html"><b>About Me</b></a>
+            <a href="publications.html"><b>Publications</b></a>
+            <a href="research.html"><b>Research</b></a>
+            <a href="projects.html"><b>Projects</b></a>
+            <a href="a-space.html"><b>Gallery</b></a>
+        </nav>
+    </header>
+<br> 
+<p class="quote"><em>"The world is a book, and those who do not travel read only one page."</em> - Saint Augustine</p>
+
+<div class="gallery">
+    <div class="gallery-item">
+        <img src="kashmir3.jpeg" alt="Album 1" onclick="openModal(this)">
+        <caption>Dal Lake, Kashmir, India</caption>
+    </div>
+    <div class="gallery-item">
+        <img src="kashmir2.jpg" alt="Album 2" onclick="openModal(this)">
+        <caption>Dal Lake, Kashmir, India</caption>
+    </div>
+    <div class="gallery-item">
+        <img src="kashmir1.webp" alt="Album 3" onclick="openModal(this)">
+        <caption>Dal Lake, Kashmir, India</caption>
+    </div>
+    <div class="gallery-item">
+        <img src="kashmir4.jpeg" alt="Album 4" onclick="openModal(this)">
+        <caption>Dal Lake, Kashmir, India</caption>
+    </div>
+    <div class="gallery-item">
+        <img src="kerala1.webp" alt="Album 5" onclick="openModal(this)">
+        <caption>Wayanad, Kerala, India</caption>
+    </div>
+    <div class="gallery-item">
+        <img src="dooars1.JPG" alt="Album 6" onclick="openModal(this)">
+        <caption>Dooars, West Bengal, India</caption>
+    </div>
+    <div class="gallery-item">
+        <img src="hyderabad2.webp" alt="Album 7" onclick="openModal(this)">
+        <caption>Chowmahalla Palace, Hyderabad, India</caption>
+    </div>
+    <div class="gallery-item">
+        <img src="pondi1.jpg" alt="Album 8" onclick="openModal(this)">
+        <caption>Rock Beach, Pondicherry, India</caption>
+    </div>
+    <div class="gallery-item">
+        <img src="hyderabad1.jpeg" alt="Album 9" onclick="openModal(this)">
+        <caption>Ananthagiri Hills, Telangana, India</caption>
+    </div>
+    <div class="gallery-item">
+        <img src="mysore1.jpeg" alt="Album 10" onclick="openModal(this)">
+        <caption>Mysore Palace, Mysore, India</caption>
+    </div>
+    <div class="gallery-item">
+        <img src="mysore3.jpeg" alt="Album 11" onclick="openModal(this)">
+        <caption>Mudumalai Tiger Reserve, Tamil Nadu, India</caption>
+    </div>
+    <div class="gallery-item">
+        <img src="mysore2.jpeg" alt="Album 12" onclick="openModal(this)">
+        <caption>Mudumalai Tiger Reserve, Tamil Nadu, India</caption>
+    </div>
+    <div class="gallery-item">
+        <img src="rajasthan2.JPG" alt="Album 13" onclick="openModal(this)">
+        <caption>Jaisalmer Desert, Rajasthan, India</caption>
+    </div>
+    <div class="gallery-item">
+        <img src="rajasthan3.JPG" alt="Album 14" onclick="openModal(this)">
+        <caption>Mehrangarh Fort, Jodhpur, India</caption>
+    </div>
+    <div class="gallery-item">
+        <img src="rajasthan1.JPG" alt="Album 15" onclick="openModal(this)">
+        <caption>Hawa Mahal, Jaipur, India</caption>
+    </div>
+    <div class="gallery-item">
+        <img src="home1.jpg" alt="Album 16" onclick="openModal(this)">
+        <caption>Berhampore, West Bengal, India</caption>
+    </div>
+    <!-- Add more albums as needed -->
+</div>
+
+<!-- Modal for displaying enlarged image -->
+<div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+        <img id="modal-img" src="">
+    </div>
+</div>
+
+<script>
+    function openModal(imgElement) {
+        document.getElementById("modal-img").src = imgElement.src;
+        document.getElementById("myModal").style.display = "flex";
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
