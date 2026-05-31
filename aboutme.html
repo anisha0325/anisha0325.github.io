@@ -108,22 +108,14 @@
       background: rgba(255, 255, 255, 0.76);
     }
 
-    .nav-wrap {
-      width: min(760px, calc(100% - 32px));
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      min-height: 17px;
-      padding: 0;
-    }
+    .nav-wrap {$1}
 
-    .nav-left {
-      display: flex;
-      align-items: center;
-      height: 100%;
-      margin-left: 8px;
+    .nav-left {$1}
+
+    .brand {
+      font-weight: 750;
+      letter-spacing: 0.02em;
+      color: var(--text);
     }
 
     nav {
@@ -206,35 +198,27 @@
       font-size: 1.08rem;
     }
 
-    .icons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 22px;
-    }
-
-    .icons a {
-      width: 48px;
-      height: 48px;
-      display: inline-grid;
-      place-items: center;
-      border-radius: 0;
-      background: transparent;
-      border: none;
-      padding: 0;
-    }
-
-    .icons a:hover {
-      transform: translateY(-2px);
-      background: transparent;
-    }
-
-    .icons img {
-      width: 28px;
-      height: 28px;
-      object-fit: contain;
-    }
+  .icons a {
+    width: 48px;
+    height: 48px;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 0;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+  
+  .icons a:hover {
+    transform: translateY(-2px);
+    background: transparent;
+  }
+  
+  .icons img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+  }
 
     .content-stack {
       display: grid;
@@ -246,11 +230,35 @@
       padding: clamp(24px, 4vw, 38px);
     }
 
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--accent-strong);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1.02;
+      letter-spacing: -0.06em;
+    }
+
     h2 {
       margin: 0 0 16px;
       font-size: clamp(1.25rem, 2vw, 1.65rem);
       line-height: 1.2;
       letter-spacing: -0.03em;
+    }
+
+    .lead {
+      margin: 22px 0 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.08rem;
     }
 
     .about-text p {
@@ -278,111 +286,86 @@
       font-size: 0.9rem;
     }
 
-    .news-list {
-      list-style: disc;
-      margin: 0;
-      padding-left: 22px;
-      display: block;
-      max-height: 300px;
-      overflow-y: auto;
-      color: var(--muted);
-    }
-
-    .news-list li {
-      margin-bottom: 12px;
-      padding: 0;
-      border: none;
-      background: transparent;
-      border-radius: 0;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .news-list li:last-child {
-      margin-bottom: 0;
-    }
-
-    .news-list li::before {
-      content: none;
-    }
+  .news-list {
+    list-style: disc;
+    margin: 0;
+    padding-left: 22px;
+    display: block;
+    max-height: 300px;
+    overflow-y: auto;
+    color: var(--muted);
+  }
+  
+  .news-list li {
+    margin-bottom: 12px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    border-radius: 0;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  
+  .news-list li:last-child {
+    margin-bottom: 0;
+  }
+  
+  .news-list li::before {
+    content: none;
+  }
 
     .publication-list {
       display: grid;
-      gap: 18px;
+      gap: 14px;
     }
 
-    .publication {
-      display: grid;
-      grid-template-columns: 230px minmax(0, 1fr);
-      gap: 18px;
-      align-items: center;
-      padding: 14px 12px;
-      border: 1px solid transparent;
-      border-radius: var(--radius-lg);
-      background: linear-gradient(180deg, var(--surface-strong), var(--surface));
-      box-shadow: none;
+    .publication-item {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.045);
     }
 
-    .publication-image-wrap {
-      width: 230px;
-      height: 180px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0;
-      border: none;
-      border-radius: 0;
-      background: transparent;
-      overflow: visible;
-    }
-
-    .publication img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-      border-radius: 0;
-    }
-
-    .publication h3 {
-      margin: 0 0 8px;
+    .publication-item h3 {
+      margin: 0 0 6px;
       color: var(--text);
-      font-size: 1.16rem;
-      line-height: 1.28;
+      font-size: 1.2rem;
+      line-height: 1.25;
     }
 
-    .publication p {
-      margin: 5px 0;
+    .publication-item p {
+      margin: 0 0 8px;
       color: var(--muted);
     }
 
-    .venue {
-      font-style: italic;
-      color: var(--muted);
-    }
-
-    .links {
+    .cta-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 12px;
+      gap: 12px;
+      margin-top: 28px;
     }
 
-    .links a {
+    .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 32px;
-      padding: 5px 11px;
-      border: 1px solid transparent;
+      min-height: 44px;
+      padding: 10px 16px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.055);
-      font-size: 0.95rem;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.07);
+      color: var(--text);
+      font-weight: 650;
     }
 
-    .links a:hover {
-      transform: translateY(-1px);
-      background: rgba(141, 180, 255, 0.14);
+    .button.primary {
+      background: rgba(141, 180, 255, 0.18);
+      border-color: rgba(184, 205, 253, 0.35);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.12);
     }
 
     @media (max-width: 860px) {
@@ -408,15 +391,6 @@
         max-width: 420px;
         margin: 0 auto;
       }
-
-      .publication {
-        grid-template-columns: 1fr;
-      }
-
-      .publication-image-wrap {
-        width: 100%;
-        height: 190px;
-      }
     }
 
     @media (max-width: 520px) {
@@ -435,11 +409,6 @@
       .profile-card {
         border-radius: 22px;
       }
-
-      .publication {
-        padding: 16px;
-        border-radius: 22px;
-      }
     }
   </style>
 </head>
@@ -452,8 +421,7 @@
           ☀️
         </button>
       </div>
-
-      <nav aria-label="Primary navigation">
+<nav aria-label="Primary navigation">
         <a href="aboutme.html">About Me</a>
         <a href="publications.html">Publications</a>
         <a href="experience.html">Experience</a>
@@ -499,9 +467,7 @@
           <div class="research-tags" aria-label="Research interests">
             <span>Multimodal Reasoning</span>
             <span>Vision-Language Models</span>
-            <span>Pragmatics</span>
-            <span>Bias &amp; Hallucination in LLMs</span>
-          </div>
+            <span>Pragmatics</span><span>Bias &amp; Hallucination in LLMs</span></div>
         </section>
 
         <section class="news-card">
@@ -516,107 +482,9 @@
           </ul>
         </section>
 
-        <section class="content-card">
-          <h2>Publications</h2>
-
-          <div class="publication-list">
-            <article class="publication">
-              <div class="publication-image-wrap">
-                <img src="sysmed.png" alt="System-mediated attention publication preview" />
-              </div>
-              <div>
-                <h3>System-Mediated Attention Imbalances Make Vision-Language Models Say Yes</h3>
-                <p>Tsan Tsai Chan, Varsha Suresh, <strong>Anisha Saha</strong>, Michael Hahn, Vera Demberg</p>
-                <p class="venue">ACL '26 Findings</p>
-                <div class="links">
-                  <a href="https://arxiv.org/abs/2601.12430" target="_blank" rel="noopener noreferrer">Paper</a>
-                  <a href="https://github.com/anisha0325/vlm-hallucination-yes-bias" target="_blank" rel="noopener noreferrer">Code</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="publication">
-              <div class="publication-image-wrap">
-                <img src="rq2-new_5.png" alt="MUStReason publication preview" />
-              </div>
-              <div>
-                <h3>MUStReason: A Benchmark for Diagnosing Pragmatic Reasoning in Video-LMs for Multimodal Sarcasm Detection</h3>
-                <p><strong>Anisha Saha</strong>, Varsha Suresh, Timothy Hospedales, Vera Demberg</p>
-                <p class="venue">LREC '26</p>
-                <div class="links">
-                  <a href="https://anisha0325.github.io/MUStReason-Project/" target="_blank" rel="noopener noreferrer">Project Page</a>
-                  <a href="https://arxiv.org/abs/2510.23727" target="_blank" rel="noopener noreferrer">Paper</a>
-                  <a href="https://github.com/anisha0325/MUStReason" target="_blank" rel="noopener noreferrer">Code</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="publication">
-              <div class="publication-image-wrap">
-                <img src="image1.JPG" alt="Clinical conversation summarization publication preview" />
-              </div>
-              <div>
-                <h3>Experience and Evidence are the Eyes of an Excellent Summarizer! Towards Knowledge Infused Multi-modal Clinical Conversation Summarization</h3>
-                <p>Abhisek Tiwari, <strong>Anisha Saha</strong>, Sriparna Saha, Pushpak Bhattacharyya, Minakshi Dhar</p>
-                <p class="venue">CIKM '23: Proceedings of the 32nd ACM International Conference on Information and Knowledge Management</p>
-                <div class="links">
-                  <a href="https://dl.acm.org/doi/abs/10.1145/3583780.3614870" target="_blank" rel="noopener noreferrer">Paper</a>
-                  <a href="https://github.com/NLP-RL/MM-CliConSummation" target="_blank" rel="noopener noreferrer">Code</a>
-                </div>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="content-card">
-          <h2>Preprints</h2>
-
-          <div class="publication-list">
-            <article class="publication">
-              <div class="publication-image-wrap">
-                <img src="teaser.png" alt="MuPHI preprint preview" />
-              </div>
-              <div>
-                <h3>MuPHI: Learning Implicit Multimodal Harm Reasoning via Semantically Grounded Reward Optimization</h3>
-                <p><strong>Anisha Saha</strong>, Varsha Suresh, Teodora Kamova, Sophia Wiedmann, Timothy Hospedales, Vera Demberg</p>
-                <div class="links">
-                  <a href="https://arxiv.org/abs/2605.29951" target="_blank" rel="noopener noreferrer">Paper</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="publication">
-              <div class="publication-image-wrap">
-                <img src="image3.jpg" alt="Medical dialogue summarization preprint preview" />
-              </div>
-              <div>
-                <h3>Two Eyes, Two Views, and Finally, One Summary! Towards Multi-modal Multi-tasking Knowledge-Infused Medical Dialogue Summarization</h3>
-                <p><strong>Anisha Saha</strong>, Abhisek Tiwari, Sai Ruthvik, Sriparna Saha</p>
-                <div class="links">
-                  <a href="https://arxiv.org/abs/2407.15237" target="_blank" rel="noopener noreferrer">Paper</a>
-                  <a href="https://github.com/NLP-RL/MMK-Summation" target="_blank" rel="noopener noreferrer">Code</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="publication">
-              <div class="publication-image-wrap">
-                <img src="Flowchart_cropped.png" alt="Forecast summarization preprint preview" />
-              </div>
-              <div>
-                <h3>Wisdom of the Crowds in Forecasting: Forecast Summarization for Supporting Future Event Prediction</h3>
-                <p><strong>Anisha Saha</strong>, Adam Jatowt</p>
-                <div class="links">
-                  <a href="https://arxiv.org/abs/2502.08205" target="_blank" rel="noopener noreferrer">Paper</a>
-                </div>
-              </div>
-            </article>
-          </div>
-        </section>
-      </div>
+        </div>
     </section>
   </main>
-
   <script>
     const toggleBtn = document.getElementById('theme-toggle');
     const body = document.body;
