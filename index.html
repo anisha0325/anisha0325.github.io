@@ -2,168 +2,522 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anisha Saha</title>
-    <style>
-        body {
-            font-family: Roboto;
-            margin: 0;
-            padding: 0;
-            background-color: black;
-            color: #D3D3D3;
-            font-size: 16px; /* Reduced overall font size */
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Anisha Saha — ELLIS PhD student working on multimodal learning, pragmatic reasoning, and large multimodal models." />
+  <title>Anisha Saha</title>
 
-        header {
-            background-color: black;
-            color: #D3D3D3;
-            padding: 11px;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
+  <style>
+    :root {
+      --bg: #08090d;
+      --surface: rgba(255, 255, 255, 0.055);
+      --surface-strong: rgba(255, 255, 255, 0.09);
+      --text: #ececf1;
+      --muted: #b7bac7;
+      --soft: #858a9b;
+      --line: rgba(255, 255, 255, 0.14);
+      --accent: #8db4ff;
+      --accent-strong: #b8cdfd;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --max-width: 1080px;
+    }
 
-        nav {
-            display: flex;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        nav a {
-            color: #D3D3D3;
-            text-decoration: none;
-            padding: 10px;
-            margin: 0 5px;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        .content {
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            align-items: flex-start;
-        }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Times New Roman", Times, serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 15%, rgba(141, 180, 255, 0.18), transparent 32%),
+        radial-gradient(circle at 85% 5%, rgba(162, 126, 255, 0.13), transparent 28%),
+        linear-gradient(135deg, #050609 0%, #0a0b12 50%, #050609 100%);
+      line-height: 1.65;
+      font-size: 17px;
+      background-color: var(--bg);
+    }
 
-        .profile {
-            max-width: 200px;
-            margin-right: 60px; /* Increased distance between image and "About Me" section */
-            text-align: center;
-        }
+    a {
+      color: var(--accent-strong);
+      text-decoration: none;
+      transition: color 180ms ease, opacity 180ms ease, transform 180ms ease;
+    }
 
-        .profile img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
+    a:hover {
+      color: var(--text);
+    }
 
-        .profile .name {
-            margin: 10px 0 5px;
-            font-size: 18px; /* Reduced size of name */
-            font-weight: bold;
-            font-family: 'Lucida Calligraphy', cursive; /* Lucida Calligraphy font */
-            color: white; /* Darker blue color */
-        }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(8, 9, 13, 0.76);
+      border-bottom: 1px solid var(--line);
+    }
 
-        .profile .bio {
-            font-size: 14px; /* Reduced size of bio */
-            color: white;
-        }
+    .theme-toggle {
+      position: relative;
+      top: 18px;
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(16px);
+      color: var(--text);
+      font-size: 1.45rem;
+      cursor: pointer;
+      transition: transform 180ms ease, background 180ms ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: none;
+    }
 
-        .write-up {
-            flex: 1;
-            text-align: left;
-        }
+    .theme-toggle:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.14);
+    }
 
-        .icons {
-            margin-top: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    body.light-mode {
+      --bg: #ffffff;
+      --surface: #f4f4f4;
+      --surface-strong: #efefef;
+      --text: #171923;
+      --muted: #495063;
+      --soft: #647087;
+      --line: rgba(0,0,0,0.08);
+      --accent: #3563ff;
+      --accent-strong: #2348d4;
+      --shadow: 0 10px 25px rgba(0,0,0,0.04);
+      background: #ffffff;
+    }
 
-        .icons img {
-            width: 30px; /* Reduced size of icons */
-            height: 30px;
-            margin: 0 5px;
-        }
+    body.light-mode .site-header {
+      background: rgba(255, 255, 255, 0.76);
+    }
 
-        .scrollable {
-            max-height: 100px; /* Set the desired height */
-            overflow-y: auto;  /* Enable vertical scrolling */
-            border: 1px solid #ccc; /* Optional: add a border for better visibility */
-            padding: 5px; /* Optional: add some padding */
-        }
+    .nav-wrap {$1}
 
-        h2 {
-            font-family: 'Roboto';
-            font-size: 18px; /* Adjusted size for headings */
-            color: #D3D3D3;
-        }
-        
-        a {
-            color: #1e90ff; /* Different color for the links */
-            text-decoration: none;
-        }
-    </style>
+    .nav-left {$1}
+
+    .brand {
+      font-weight: 750;
+      letter-spacing: 0.02em;
+      color: var(--text);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 8px;
+      height: 100%;
+    }
+
+    nav a {
+      color: var(--muted);
+      padding: 1px 6px;
+      border-radius: 999px;
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      background: var(--surface);
+      color: var(--text);
+    }
+
+    main {
+      width: min(var(--max-width), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 64px 0;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 310px minmax(0, 1fr);
+      gap: 44px;
+      align-items: start;
+    }
+
+    .profile-card,
+    .content-card,
+    .news-card {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, var(--surface-strong), var(--surface));
+      box-shadow: var(--shadow);
+      border-radius: var(--radius-lg);
+    }
+
+    .profile-card {
+      position: sticky;
+      top: 92px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .profile-img {
+      width: 100%;
+      aspect-ratio: 1 / 1.12;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      filter: saturate(1.02) contrast(1.03);
+    }
+
+    .name {
+      margin: 20px 0 4px;
+      font-family: "Times New Roman", Times, serif;
+      font-size: clamp(1.8rem, 4vw, 2.3rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      color: #ffffff;
+    }
+
+    body.light-mode .name {
+      color: #000000;
+    }
+
+    .bio {
+      margin: 0 auto;
+      max-width: 240px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .icons a {
+      width: 42px;
+      height: 42px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid var(--line);
+    }
+
+    .icons a:hover {
+      transform: translateY(-2px);
+      background: rgba(141, 180, 255, 0.14);
+    }
+
+    .icons img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+
+    .content-stack {
+      display: grid;
+      gap: 22px;
+    }
+
+    .content-card,
+    .news-card {
+      padding: clamp(24px, 4vw, 38px);
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--accent-strong);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1.02;
+      letter-spacing: -0.06em;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: clamp(1.25rem, 2vw, 1.65rem);
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      margin: 22px 0 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .about-text p {
+      margin: 0 0 18px;
+      color: var(--muted);
+    }
+
+    .about-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .research-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .research-tags span {
+      padding: 7px 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.045);
+      font-size: 0.9rem;
+    }
+
+    .news-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+      max-height: 300px;
+      overflow-y: auto;
+      padding-right: 8px;
+    }
+
+    .news-list::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .news-list::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+    }
+
+    .news-list li {
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.045);
+      color: var(--muted);
+    }
+
+    .news-list li::before {
+      content: "•";
+      color: var(--accent-strong);
+      font-weight: 900;
+      margin-right: 8px;
+    }
+
+    .publication-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .publication-item {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.045);
+    }
+
+    .publication-item h3 {
+      margin: 0 0 6px;
+      color: var(--text);
+      font-size: 1.2rem;
+      line-height: 1.25;
+    }
+
+    .publication-item p {
+      margin: 0 0 8px;
+      color: var(--muted);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.07);
+      color: var(--text);
+      font-weight: 650;
+    }
+
+    .button.primary {
+      background: rgba(141, 180, 255, 0.18);
+      border-color: rgba(184, 205, 253, 0.35);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    @media (max-width: 860px) {
+      .nav-wrap {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: flex-start;
+      }
+
+      main {
+        padding: 36px 0;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-card {
+        position: static;
+        max-width: 420px;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .nav-wrap,
+      main {
+        width: min(100% - 24px, var(--max-width));
+      }
+
+      nav a {
+        padding: 7px 9px;
+        font-size: 0.88rem;
+      }
+
+      .content-card,
+      .news-card,
+      .profile-card {
+        border-radius: 22px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <a href="aboutme.html"><b>About Me</b></a>
-            <a href="publications.html"><b>Publications</b></a>
-            <a href="research.html"><b>Research</b></a>
-            <a href="projects.html"><b>Projects</b></a>
-            <a href="a-space.html"><b>Gallery</b></a>
-        </nav>
-    </header>
-
-    <div class="content">
-        <div class="profile">
-            <img src="Anisha_photo.jpg" alt="Your Picture">
-            <div class="name">Anisha Saha</div>
-            <div class="bio">ELLIS PhD student | MPI-Informatics & The University of Edinburgh</div>
-            <div class="icons">
-                <a href="mailto:asaha@cs.uni-saarland.de" title="Email"><img src="email_icon.png" alt="Email"></a>
-                <a href="https://www.linkedin.com/in/anisha0398/" title="LinkedIn" target="_blank"><img src="linkedin_icon.png" alt="LinkedIn"></a>
-                <a href="https://x.com/anishashhh" title="Twitter" target="_blank"><img src="X.png" alt="Twitter"></a> <!-- Twitter icon added here -->
-                <a href="your-cv.pdf" title="Curriculum Vitae" target="_blank"><img src="cv_icon.png" alt="CV"></a>
-                <a href="https://scholar.google.com/citations?user=bqVlnUMAAAAJ&hl=en" title="Google Scholar" target="_blank"><img src="google_scholar_icon.png" alt="Google Scholar"></a>
-                <a href="https://github.com/anisha0325" title="GitHub" target="_blank"><img src="github_icon.png" alt="GitHub"></a>
-            </div>
-        </div>
-        <div class="write-up">
-            <h2>About Me</h2>
-            <p>I'm an <a href="https://ellis.eu/" target="_blank">ELLIS</a> PhD student at <a href="https://www.mpi-inf.mpg.de/home" target="_blank">The Max Planck Institute for Informatics</a> at
-                <a href="https://www.uni-saarland.de/en/home.html" target="_blank">Saarland University</a> and <a href="https://www.ed.ac.uk/" target="_blank">The University of Edinburgh</a>, advised
-                by <a href="https://www.mpi-inf.mpg.de/departments/mlp/vera-demberg" target="_blank">Prof. Vera Demberg</a> and
-            <a href="https://homepages.inf.ed.ac.uk/thospeda/" target="_blank">Prof. Timothy Hospedales</a>. Before this, I worked at Micron Technology as a Data Scientist after completing my MSc. 
-                in Data Science from Chennai Mathematical Institute. I had the opportunity to collaborate with eminent researchers like 
-                <a href="https://www.iitp.ac.in/~sriparna/" target="_blank">Prof. Sriparna Saha</a>, 
-                <a href="https://precog.iiit.ac.in/" target="_blank">Prof. Ponnurangam Kumaraguru</a> and 
-                <a href="https://adammo12.github.io/adamjatowt/" target="_blank">Prof. Adam Jatowt</a> on multimodal learning, model augmentation and temporal understanding of LLMs (<a href="https://anisha0325.github.io/research.html" target="_blank">details</a>).</p>
-            <p>My research focuses on uncovering implicit intentions expressed through the integration of language, audio, and visual modalities, and on advancing pragmatic reasoning to enhance the interpretability of large multimodal models. 
-                    I'm also interested in the fusion mechanisms of VLMs, multi-modal evaluation and jailbreaking.</p>
-            <br>
-            <h2>News</h2>
-            <div class="scrollable">
-                <ul>
-                    <li>Checkout our new  <a href="https://arxiv.org/abs/2605.29951" target="_blank">preprint</a> on Implicit Multimodal Harm Reasoning.</li>
-                    <li>Our paper on <a href="https://arxiv.org/abs/2601.12430" target="_blank">System-Mediated Hypothesis in VLM Hallucination</a> has been accepted at ACL 2026 Findings!</li>
-                    <li>Our paper <a href="https://arxiv.org/abs/2510.23727" target="_blank">MUStReason</a> is accepted at LREC 2026!</li>
-                    <li>Attended <a href="https://www.linkedin.com/posts/ellisforeurope_from-25-29-august-2025-ellis-unit-warsaw-activity-7383513794150580224-91zZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAACm-Y54BaoBagiKw1MP72bKjUYeYbPww2uQ" target="_blank">ELLIS Doctoral Symposiym 2025</a> in Warsaw, Poland.</li>
-                    <li>Joined the 2024 ELLIS PhD Cohort. Find my <a href="https://ellis.eu/news/ellis-phd-program-attracts-global-ai-talent-to-europe-120-early-career-researchers-join-the-network-in-2024" target="_blank">quote</a>.</li>
-                    <li>Attended the 18th Academic Research and Careers for Students (ARCS) Symposium by ACM at NISER, Bhubaneshwar. <a href="https://www.linkedin.com/posts/anisha0398_acm-acmindia-arcs2024-activity-7162104439112224768-oJH_?utm_source=share&utm_medium=member_desktop" target="_blank">Here</a> are a few snaps from the event.</li>
-                </ul>
-            </div>
-        </div>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <div class="nav-left">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark and light mode">
+          ☀️
+        </button>
+      </div>
+<nav aria-label="Primary navigation">
+        <a href="aboutme.html">About Me</a>
+        <a href="publications.html">Publications</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html">Projects</a>
+        <a href="a-space.html">Gallery</a>
+      </nav>
     </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Homepage introduction">
+      <aside class="profile-card">
+        <img class="profile-img" src="Anisha_photo.jpg" alt="Portrait of Anisha Saha" />
+        <h1 class="name">Anisha Saha</h1>
+        <p class="bio">ELLIS PhD student | MPI-Informatics &amp; The University of Edinburgh</p>
+
+        <div class="icons" aria-label="Social and academic links">
+          <a href="mailto:asaha@cs.uni-saarland.de" title="Email" aria-label="Email Anisha"><img src="email_icon.png" alt="" /></a>
+          <a href="https://www.linkedin.com/in/anisha0398/" title="LinkedIn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="linkedin_icon.png" alt="" /></a>
+          <a href="https://x.com/anishashhh" title="X" target="_blank" rel="noopener noreferrer" aria-label="X profile"><img src="X.png" alt="" /></a>
+          <a href="your-cv.pdf" title="Curriculum Vitae" target="_blank" rel="noopener noreferrer" aria-label="Curriculum Vitae"><img src="cv_icon.png" alt="" /></a>
+          <a href="https://scholar.google.com/citations?user=bqVlnUMAAAAJ&amp;hl=en" title="Google Scholar" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><img src="google_scholar_icon.png" alt="" /></a>
+          <a href="https://github.com/anisha0325" title="GitHub" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><img src="github_icon.png" alt="" /></a>
+        </div>
+      </aside>
+
+      <div class="content-stack">
+        <section class="content-card about-text">
+          <h2>About Me</h2>
+          <p>
+            I'm an <a href="https://ellis.eu/" target="_blank" rel="noopener noreferrer">ELLIS</a> PhD student at <a href="https://www.mpi-inf.mpg.de/home" target="_blank" rel="noopener noreferrer">The Max Planck Institute for Informatics</a> at
+            <a href="https://www.uni-saarland.de/en/home.html" target="_blank" rel="noopener noreferrer">Saarland University</a> and <a href="https://www.ed.ac.uk/" target="_blank" rel="noopener noreferrer">The University of Edinburgh</a>, advised
+            by <a href="https://www.mpi-inf.mpg.de/departments/mlp/vera-demberg" target="_blank" rel="noopener noreferrer">Prof. Vera Demberg</a> and
+            <a href="https://homepages.inf.ed.ac.uk/thospeda/" target="_blank" rel="noopener noreferrer">Prof. Timothy Hospedales</a>. Before this, I worked at Micron Technology as a Data Scientist after completing my MSc.
+            in Data Science from Chennai Mathematical Institute. I had the opportunity to collaborate with eminent researchers like
+            <a href="https://www.iitp.ac.in/~sriparna/" target="_blank" rel="noopener noreferrer">Prof. Sriparna Saha</a>,
+            <a href="https://precog.iiit.ac.in/" target="_blank" rel="noopener noreferrer">Prof. Ponnurangam Kumaraguru</a> and
+            <a href="https://adammo12.github.io/adamjatowt/" target="_blank" rel="noopener noreferrer">Prof. Adam Jatowt</a> on multimodal learning, model augmentation and temporal understanding of LLMs (<a href="https://anisha0325.github.io/research.html" target="_blank" rel="noopener noreferrer">details</a>).
+          </p>
+          <p>
+            My research lies at the intersection of multimodal understanding and pragmatic reasoning. I am interested in how language, audio, and visual signals interact to convey implicit intent and reason about it. More broadly, I work on multimodal information fusion in VLMs, evaluating multimodal systems and open-ended reasoning and studying issues such as bias, hallucination and robustness.
+          </p>
+
+          <div class="research-tags" aria-label="Research interests">
+            <span>Multimodal Reasoning</span>
+            <span>Vision-Language Models</span>
+            <span>Pragmatics</span><span>Bias &amp; Hallucination in LLMs</span></div>
+        </section>
+
+        <section class="news-card">
+          <h2>News</h2>
+          <ul class="news-list">
+            <li>Checkout our new <a href="https://arxiv.org/abs/2605.29951" target="_blank" rel="noopener noreferrer">preprint</a> on Implicit Multimodal Harm Reasoning.</li>
+            <li>Our paper on <a href="https://arxiv.org/abs/2601.12430" target="_blank" rel="noopener noreferrer">System-Mediated Hypothesis in VLM Hallucination</a> has been accepted at ACL 2026 Findings!</li>
+            <li>Our paper <a href="https://arxiv.org/abs/2510.23727" target="_blank" rel="noopener noreferrer">MUStReason</a> is accepted at LREC 2026!</li>
+            <li>Attended <a href="https://www.linkedin.com/posts/ellisforeurope_from-25-29-august-2025-ellis-unit-warsaw-activity-7383513794150580224-91zZ?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAACm-Y54BaoBagiKw1MP72bKjUYeYbPww2uQ" target="_blank" rel="noopener noreferrer">ELLIS Doctoral Symposium 2025</a> in Warsaw, Poland.</li>
+            <li>Joined the 2024 ELLIS PhD Cohort. Find my <a href="https://ellis.eu/news/ellis-phd-program-attracts-global-ai-talent-to-europe-120-early-career-researchers-join-the-network-in-2024" target="_blank" rel="noopener noreferrer">quote</a>.</li>
+            <li>Attended the 18th Academic Research and Careers for Students (ARCS) Symposium by ACM at NISER, Bhubaneshwar. <a href="https://www.linkedin.com/posts/anisha0398_acm-acmindia-arcs2024-activity-7162104439112224768-oJH_?utm_source=share&amp;utm_medium=member_desktop" target="_blank" rel="noopener noreferrer">Here</a> are a few snaps from the event.</li>
+          </ul>
+        </section>
+
+        </div>
+    </section>
+  </main>
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      body.classList.add('light-mode');
+      toggleBtn.textContent = '🌙';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('light-mode');
+
+      const isLight = body.classList.contains('light-mode');
+      toggleBtn.textContent = isLight ? '🌙' : '☀️';
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+  </script>
 </body>
 
 </html>
-
-
-
-
-
-
