@@ -2,159 +2,461 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications</title>
-    <style>
-        body {
-            font-family: Roboto;
-            margin: 0;
-            padding: 0;
-            background-color: black;
-            color: #D3D3D3;
-            font-size: 15px; /* Reduced overall font size */
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publications | Anisha Saha</title>
 
-        header {
-            background-color: black;
-            color: #D3D3D3;
-            padding: 11px;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
+  <style>
+    :root {
+      --bg: #08090d;
+      --surface: rgba(255, 255, 255, 0.055);
+      --surface-strong: rgba(255, 255, 255, 0.09);
+      --text: #ececf1;
+      --muted: #b7bac7;
+      --line: rgba(255, 255, 255, 0.14);
+      --accent: #8db4ff;
+      --accent-strong: #b8cdfd;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --max-width: 1080px;
+    }
 
-        nav {
-            display: flex;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        nav a {
-            color: #D3D3D3;
-            text-decoration: none;
-            padding: 10px;
-            margin: 0 5px;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        h2 {
-            font-family: 'Roboto'; /* Using Lucida Calligraphy for headings */
-            font-size: 20px; /* Increased size for headings */
-            color: #D3D3D3; /* Medium blue color for headings */
-            margin-bottom: 20px; /* Increased bottom margin for separation */
-        }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Times New Roman", Times, serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 15%, rgba(141, 180, 255, 0.18), transparent 32%),
+        radial-gradient(circle at 85% 5%, rgba(162, 126, 255, 0.13), transparent 28%),
+        linear-gradient(135deg, #050609 0%, #0a0b12 50%, #050609 100%);
+      line-height: 1.6;
+      font-size: 17px;
+    }
 
-        section {
-            max-width: 850px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: black;
-            text-align: left;
-        }
+    a {
+      color: var(--accent-strong);
+      text-decoration: none;
+      transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+    }
 
-        .publication {
-            display: flex;
-            margin-bottom: 20px;
-            align-items: flex-start; /* Align items at the start of flex container */
-        }
+    a:hover {
+      color: var(--text);
+    }
 
-        .publication img {
-            width: 250px; /* Larger size for images */
-            height: auto; /* Maintain aspect ratio */
-            margin-right: 20px;
-            border-radius: 5px;
-        }
+    .site-header {
+      width: 100%;
+      left: 0;
+      right: 0;
+      position: fixed;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(8, 9, 13, 0.76);
+      border-bottom: 1px solid var(--line);
+    }
 
-        .publication h3 {
-            margin-top: 0;
-            color: #87CEEB; /* Deep blue color for publication names */
-            font-size: 16px; /* Increased size for headings */
-        }
+    .theme-toggle {
+      position: fixed;
+      top: 18px;
+      left: 16px;
+      z-index: 1000;
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(16px);
+      color: var(--text);
+      font-size: 1.45rem;
+      cursor: pointer;
+      transition: transform 180ms ease, background 180ms ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: none;
+    }
 
-        .publication p:nth-of-type(3) {
-            font-style: italic; /* Italicize the third line */
-            color: #666; /* Grey color for the third line */
-        }
+    .theme-toggle:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.14);
+    }
 
-        .publication p {
-            margin: 5px 0;
-        }
-    </style>
+    body.light-mode {
+      --bg: #ffffff;
+      --surface: #f4f4f4;
+      --surface-strong: #efefef;
+      --text: #171923;
+      --muted: #495063;
+      --line: rgba(0,0,0,0.08);
+      --accent: #3563ff;
+      --accent-strong: #2348d4;
+      --shadow: 0 10px 25px rgba(0,0,0,0.04);
+      background: #ffffff;
+    }
+
+    body.light-mode .site-header {
+      background: rgba(255, 255, 255, 0.76);
+    }
+
+    .nav-wrap {
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 12px;
+      min-height: 52px;
+      padding: 0;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      margin-left: 8px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 8px;
+    }
+
+    nav a {
+      color: var(--muted);
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background: var(--surface);
+      color: var(--text);
+    }
+
+    main {
+      width: 100%;
+      margin: 0 auto;
+      padding: 110px 0 72px;
+    }
+
+    .page-intro {
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .page-intro p {
+      margin: 0;
+      max-width: 720px;
+      color: var(--muted);
+    }
+
+    .section-block {
+      margin-top: 28px;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: clamp(1.25rem, 2vw, 1.65rem);
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+
+    .publication-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .publication {
+      display: grid;
+      grid-template-columns: 230px minmax(0, 1fr);
+      gap: 24px;
+      align-items: center;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, var(--surface-strong), var(--surface));
+      box-shadow: var(--shadow);
+    }
+
+    .publication-image-wrap {
+      width: 230px;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.05);
+      overflow: hidden;
+    }
+
+    .publication img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .publication h3 {
+      margin: 0 0 8px;
+      color: var(--text);
+      font-size: 1.16rem;
+      line-height: 1.28;
+    }
+
+    .publication p {
+      margin: 5px 0;
+      color: var(--muted);
+    }
+
+    .venue {
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 32px;
+      padding: 5px 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.055);
+      font-size: 0.95rem;
+    }
+
+    .links a:hover {
+      transform: translateY(-1px);
+      background: rgba(141, 180, 255, 0.14);
+    }
+
+    @media (max-width: 760px) {
+      main {
+        padding: 36px 0 52px;
+      }
+
+      .nav-wrap,
+      nav {
+        justify-content: center;
+      }
+
+      .publication {
+        grid-template-columns: 1fr;
+      }
+
+      .publication-image-wrap {
+        width: 100%;
+        height: 190px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      main,
+      .nav-wrap {
+        width: min(100% - 24px, var(--max-width));
+      }
+
+      nav a {
+        font-size: 0.95rem;
+        padding: 2px 6px;
+      }
+
+      .publication {
+        padding: 16px;
+        border-radius: 22px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <a href="aboutme.html"><b>About Me</b></a>
-            <a href="publications.html"><b>Publications</b></a>
-            <a href="research.html"><b>Research</b></a>
-            <a href="projects.html"><b>Projects</b></a>
-            <a href="a-space.html"><b>Gallery</b></a>
-        </nav>
-    </header>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <div class="nav-left">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark and light mode">
+          ☀️
+        </button>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="aboutme.html">About Me</a>
+        <a class="active" href="publications.html">Publications</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html">Projects</a>
+        <a href="a-space.html">Gallery</a>
+      </nav>
+    </div>
+  </header>
 
-    <section>
-        <h2>Publications</h2>
-        <div class="publication">
-            <img src="rq2-new_5.png" alt="Publication Image">
-            <div>
-                <h3>MUStReason: A Benchmark for Diagnosing Pragmatic Reasoning in Video-LMs for Multimodal Sarcasm Detection</h3>
-                <p><strong>Anisha Saha</strong>, Varsha Suresh, Timothy Hospedales, Vera Demberg</p>
-                <p><em>LREC '26</em></p>
-                 <p><a href="https://anisha0325.github.io/MUStReason-Project/">Project Page</a></p>    <p><a href="https://arxiv.org/abs/2510.23727">Paper</a></p>    <a href="https://github.com/anisha0325/MUStReason" target="_blank">Code</a></p>
-            </div>      
-        </div>
-        <div class="publication">
-            <img src="sysmed.png" alt="Publication Image">
-            <div>
-                <h3>System-Mediated Attention Imbalances Make Vision-Language Models Say Yes</h3>
-                <p>Tsan Tsai Chan, Varsha Suresh, <strong>Anisha Saha</strong>, Michael Hahn, Vera Demberg</p>
-                <p><em>ACL '26</em>(Findings)</p>
-                <p><a href="https://arxiv.org/abs/2601.12430">Paper</a></p>    <a href="https://github.com/anisha0325/vlm-hallucination-yes-bias" target="_blank">Code</a></p>
-            </div>      
-        </div>
-        <div class="publication">
-            <img src="image1.JPG" alt="Publication Image">
-            <div>
-                <h3>Experience and Evidence are the eyes of an excellent summarizer! Towards Knowledge Infused Multi-modal Clinical Conversation Summarization</h3>
-                <p>Abhisek Tiwari, <strong>Anisha Saha</strong>, Sriparna Saha, Pushpak Bhattacharyya, Minakshi Dhar</p>
-                <p><em>CIKM '23: Proceedings of the 32nd ACM International Conference on Information and Knowledge Management</em></p>
-                <p><a href="https://dl.acm.org/doi/abs/10.1145/3583780.3614870">Paper</a>    <a href="https://github.com/NLP-RL/MM-CliConSummation" target="_blank">Code</a></p>
-            </div>
-        </div>
-        <h2>Preprints</h2>
-        <div class="publication">
-            <img src="teaser.png" alt="Publication Image">
-            <div>
-                <h3>MuPHI: Learning Implicit Multimodal Harm Reasoning via Semantically Grounded Reward Optimization</h3>
-                <p><strong>Anisha Saha</strong>, Varsha Suresh, Teodora Kamova, Sophia Wiedmann, Timothy Hospedales, Vera Demberg</p>
-                <p><a href="https://arxiv.org/abs/2605.29951">Paper</a></p>
-            </div>      
-        </div>
-            <img src="image3.jpg" alt="Publication Image">
-            <div>
-                <h3>Two eyes, Two views, and finally, One summary! Towards Multi-modal Multi-tasking Knowledge-Infused Medical Dialogue Summarization</h3>
-                <p><strong>Anisha Saha</strong>, Abhisek Tiwari, Sai Ruthvik, Sriparna Saha</p>
-                <p><a href="https://arxiv.org/abs/2407.15237">Paper</a>    <a href="https://github.com/NLP-RL/MMK-Summation" target="_blank">Code</a></p>
-            </div>      
-        </div>
-        <div class="publication">
-            <img src="Flowchart_cropped.png" alt="Publication Image">
-            <div>
-                <h3>Wisdom of the Crowds in Forecasting: Forecast Summarization for Supporting Future Event Prediction</h3>
-                <p><strong>Anisha Saha</strong>, Adam Jatowt</p>
-                <p><a href="https://arxiv.org/abs/2502.08205">Paper</a></p>
-            </div>      
-        </div>
-        <h2> Articles </h2>
-        <div class="publication">
-            <img src="image2.JPG" alt="Publication Image">
-            <div>
-                <h3>Guide To Distributed Representations in ML</h3>
-                <p><strong>Anisha Saha</strong>, Chandrashish Prasad, Venkatesh Vinayakarao</p>
-                <p><em>Analytics India Magazine, 2021</em></p>
-                <p><a href="https://analyticsindiamag.com/guide-to-distributed-representations-in-ml/">Link</a>    <a href="https://github.com/anisha0325/Distributed-Representations-Made-Easy" target="_blank">Code</a></p>
-            </div>
-        </div>
+  <main>
+    <section class="page-intro">
+      <h1>Publications</h1>
     </section>
+
+    <section class="section-block" aria-labelledby="publications-heading">
+      <div class="publication-list">
+        <article class="publication">
+          <div class="publication-image-wrap">
+            <img src="sysmed.png" alt="System-mediated attention publication preview" />
+          </div>
+          <div>
+            <h3>System-Mediated Attention Imbalances Make Vision-Language Models Say Yes</h3>
+            <p>Tsan Tsai Chan, Varsha Suresh, <strong>Anisha Saha</strong>, Michael Hahn, Vera Demberg</p>
+            <p class="venue">ACL '26 Findings</p>
+            <div class="links">
+              <a href="https://arxiv.org/abs/2601.12430" target="_blank" rel="noopener noreferrer">Paper</a>
+              <a href="https://github.com/anisha0325/vlm-hallucination-yes-bias" target="_blank" rel="noopener noreferrer">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication">
+          <div class="publication-image-wrap">
+            <img src="rq2-new_5.png" alt="MUStReason publication preview" />
+          </div>
+          <div>
+            <h3>MUStReason: A Benchmark for Diagnosing Pragmatic Reasoning in Video-LMs for Multimodal Sarcasm Detection</h3>
+            <p><strong>Anisha Saha</strong>, Varsha Suresh, Timothy Hospedales, Vera Demberg</p>
+            <p class="venue">LREC '26</p>
+            <div class="links">
+              <a href="https://anisha0325.github.io/MUStReason-Project/" target="_blank" rel="noopener noreferrer">Project Page</a>
+              <a href="https://arxiv.org/abs/2510.23727" target="_blank" rel="noopener noreferrer">Paper</a>
+              <a href="https://github.com/anisha0325/MUStReason" target="_blank" rel="noopener noreferrer">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication">
+          <div class="publication-image-wrap">
+            <img src="image1.JPG" alt="Clinical conversation summarization publication preview" />
+          </div>
+          <div>
+            <h3>Experience and Evidence are the Eyes of an Excellent Summarizer! Towards Knowledge Infused Multi-modal Clinical Conversation Summarization</h3>
+            <p>Abhisek Tiwari, <strong>Anisha Saha</strong>, Sriparna Saha, Pushpak Bhattacharyya, Minakshi Dhar</p>
+            <p class="venue">CIKM '23: Proceedings of the 32nd ACM International Conference on Information and Knowledge Management</p>
+            <div class="links">
+              <a href="https://dl.acm.org/doi/abs/10.1145/3583780.3614870" target="_blank" rel="noopener noreferrer">Paper</a>
+              <a href="https://github.com/NLP-RL/MM-CliConSummation" target="_blank" rel="noopener noreferrer">Code</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-block" aria-labelledby="preprints-heading">
+      <h2 id="preprints-heading">Preprints</h2>
+      <div class="publication-list">
+        <article class="publication">
+          <div class="publication-image-wrap">
+            <img src="teaser.png" alt="MuPHI preprint preview" />
+          </div>
+          <div>
+            <h3>MuPHI: Learning Implicit Multimodal Harm Reasoning via Semantically Grounded Reward Optimization</h3>
+            <p><strong>Anisha Saha</strong>, Varsha Suresh, Teodora Kamova, Sophia Wiedmann, Timothy Hospedales, Vera Demberg</p>
+            <div class="links">
+              <a href="https://arxiv.org/abs/2605.29951" target="_blank" rel="noopener noreferrer">Paper</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication">
+          <div class="publication-image-wrap">
+            <img src="image3.jpg" alt="Medical dialogue summarization preprint preview" />
+          </div>
+          <div>
+            <h3>Two Eyes, Two Views, and Finally, One Summary! Towards Multi-modal Multi-tasking Knowledge-Infused Medical Dialogue Summarization</h3>
+            <p><strong>Anisha Saha</strong>, Abhisek Tiwari, Sai Ruthvik, Sriparna Saha</p>
+            <div class="links">
+              <a href="https://arxiv.org/abs/2407.15237" target="_blank" rel="noopener noreferrer">Paper</a>
+              <a href="https://github.com/NLP-RL/MMK-Summation" target="_blank" rel="noopener noreferrer">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication">
+          <div class="publication-image-wrap">
+            <img src="Flowchart_cropped.png" alt="Forecast summarization preprint preview" />
+          </div>
+          <div>
+            <h3>Wisdom of the Crowds in Forecasting: Forecast Summarization for Supporting Future Event Prediction</h3>
+            <p><strong>Anisha Saha</strong>, Adam Jatowt</p>
+            <div class="links">
+              <a href="https://arxiv.org/abs/2502.08205" target="_blank" rel="noopener noreferrer">Paper</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-block" aria-labelledby="articles-heading">
+      <h2 id="articles-heading">Articles</h2>
+      <div class="publication-list">
+        <article class="publication">
+          <div class="publication-image-wrap">
+            <img src="image2.JPG" alt="Distributed representations article preview" />
+          </div>
+          <div>
+            <h3>Guide To Distributed Representations in ML</h3>
+            <p><strong>Anisha Saha</strong>, Chandrashish Prasad, Venkatesh Vinayakarao</p>
+            <p class="venue">Analytics India Magazine, 2021</p>
+            <div class="links">
+              <a href="https://analyticsindiamag.com/guide-to-distributed-representations-in-ml/" target="_blank" rel="noopener noreferrer">Link</a>
+              <a href="https://github.com/anisha0325/Distributed-Representations-Made-Easy" target="_blank" rel="noopener noreferrer">Code</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      body.classList.add('light-mode');
+      toggleBtn.textContent = '🌙';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('light-mode');
+
+      const isLight = body.classList.contains('light-mode');
+      toggleBtn.textContent = isLight ? '🌙' : '☀️';
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+  </script>
 </body>
 
 </html>
