@@ -198,34 +198,27 @@
       font-size: 1.08rem;
     }
 
-    .icons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 22px;
-    }
-
-    .icons a {
-      width: 42px;
-      height: 42px;
-      display: inline-grid;
-      place-items: center;
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid var(--line);
-    }
-
-    .icons a:hover {
-      transform: translateY(-2px);
-      background: rgba(141, 180, 255, 0.14);
-    }
-
-    .icons img {
-      width: 22px;
-      height: 22px;
-      object-fit: contain;
-    }
+  .icons a {
+    width: 48px;
+    height: 48px;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 0;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+  
+  .icons a:hover {
+    transform: translateY(-2px);
+    background: transparent;
+  }
+  
+  .icons img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+  }
 
     .content-stack {
       display: grid;
@@ -293,40 +286,33 @@
       font-size: 0.9rem;
     }
 
-    .news-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: grid;
-      gap: 12px;
-      max-height: 300px;
-      overflow-y: auto;
-      padding-right: 8px;
-    }
-
-    .news-list::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    .news-list::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 999px;
-    }
-
-    .news-list li {
-      padding: 14px 16px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-md);
-      background: rgba(255, 255, 255, 0.045);
-      color: var(--muted);
-    }
-
-    .news-list li::before {
-      content: "•";
-      color: var(--accent-strong);
-      font-weight: 900;
-      margin-right: 8px;
-    }
+  .news-list {
+    list-style: disc;
+    margin: 0;
+    padding-left: 22px;
+    display: block;
+    max-height: 300px;
+    overflow-y: auto;
+    color: var(--muted);
+  }
+  
+  .news-list li {
+    margin-bottom: 12px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    border-radius: 0;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  
+  .news-list li:last-child {
+    margin-bottom: 0;
+  }
+  
+  .news-list li::before {
+    content: none;
+  }
 
     .publication-list {
       display: grid;
