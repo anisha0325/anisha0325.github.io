@@ -42,6 +42,7 @@
         radial-gradient(circle at 85% 5%, rgba(162, 126, 255, 0.13), transparent 28%),
         linear-gradient(135deg, #050609 0%, #0a0b12 50%, #050609 100%);
       line-height: 1.65;
+      font-size: 17px;
     }
 
     a {
@@ -51,7 +52,7 @@
     }
 
     a:hover {
-      color: #ffffff;
+      color: var(--text);
     }
 
     .site-header {
@@ -99,38 +100,15 @@
       --accent: #3563ff;
       --accent-strong: #2348d4;
       --shadow: 0 20px 50px rgba(0,0,0,0.08);
-      background:
-        radial-gradient(circle at 15% 15%, rgba(53, 99, 255, 0.08), transparent 32%),
-        radial-gradient(circle at 85% 5%, rgba(137, 92, 255, 0.06), transparent 28%),
-        linear-gradient(135deg, #f9fbff 0%, #eef2fb 50%, #f7f9ff 100%);
-    }
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(18px);
-      background: rgba(8, 9, 13, 0.76);
-      border-bottom: 1px solid var(--line);
     }
 
-    .nav-wrap {
-      width: min(760px, calc(100% - 32px));
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      min-height: 17px;
-      padding: 0;
-    }
+    body.light-mode .site-header {
+      background: rgba(255, 255, 255, 0.76);
     }
 
-    .nav-left {
-      display: flex;
-      align-items: center;
-      height: 100%;
-      margin-left: 8px;
-    }
-    }
+    .nav-wrap {$1}
+
+    .nav-left {$1}
 
     .brand {
       font-weight: 750;
@@ -207,6 +185,10 @@
       color: #ffffff;
     }
 
+    body.light-mode .name {
+      color: #000000;
+    }
+
     .bio {
       margin: 0 auto;
       max-width: 240px;
@@ -272,7 +254,7 @@
 
     h2 {
       margin: 0 0 16px;
-      font-size: clamp(2rem, 3vw, 2.6rem);
+      font-size: clamp(1.55rem, 2.4vw, 1.95rem);
       line-height: 1.2;
       letter-spacing: -0.03em;
     }
